@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.agro-gradient {
+  background: linear-gradient(135deg, #052e16 0%, #166534 60%, #15803d 100%);
+}
+
+.leaf-pattern {
+  background-color: #f0fdf4;
+  background-image: radial-gradient(#86efac 0.75px, transparent 0.75px), radial-gradient(#86efac 0.75px, #f0fdf4 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+

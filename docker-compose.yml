@@ -1,0 +1,94 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongo:
+    image: mongo:7.0
+    container_name: agrobloom-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: agrobloom_ai
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - agrobloom-net
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Python FastAPI AI Microservice
+  ai-service:
+    build:
+      context: ./ai-service
+      dockerfile: Dockerfile
+    container_name: agrobloom-ai-service
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - ENVIRONMENT=production
+    volumes:
+      - ./ai-service/models:/app/models
+    networks:
+      - agrobloom-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  # Node.js Express Backend
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: agrobloom-backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://mongo:27017/agrobloom_ai
+      - JWT_SECRET=agrobloom_mca_project_secure_jwt_token_key_2026
+      - CLIENT_URL=http://localhost,http://localhost:80,http://localhost:5173
+      - AI_SERVICE_URL=http://ai-service:8000
+      - UPLOAD_DIR=uploads
+    depends_on:
+      mongo:
+        condition: service_healthy
+      ai-service:
+        condition: service_healthy
+    volumes:
+      - backend_uploads:/usr/src/app/uploads
+    networks:
+      - agrobloom-net
+
+  # React PWA Frontend
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: agrobloom-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - agrobloom-net
+
+networks:
+  agrobloom-net:
+    driver: bridge
+
+volumes:
+  mongo_data:
+  backend_uploads:
+

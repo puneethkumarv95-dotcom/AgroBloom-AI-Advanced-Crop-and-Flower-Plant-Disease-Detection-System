@@ -1,0 +1,25 @@
+node_modules/
+client/node_modules/
+server/node_modules/
+client/dist/
+server/uploads/*
+!server/uploads/.gitkeep
+ai-service/__pycache__/
+ai-service/.pytest_cache/
+__pycache__/
+.pytest_cache/
+.env
+**/.env
+**/.env.*
+!**/.env.example
+
+# Local datasets and downloaded archives
+/ai-service/data/*
+!/ai-service/data/crops_dataset_manifest.json
+!/ai-service/data/flowers_dataset_manifest.json
+
+# Training checkpoints; keep only the models used by the AI service at runtime
+/ai-service/models/*.keras
+!/ai-service/models/crop_model.keras
+!/ai-service/models/flower_model.keras
+/ai-service/saved_models/*.keras

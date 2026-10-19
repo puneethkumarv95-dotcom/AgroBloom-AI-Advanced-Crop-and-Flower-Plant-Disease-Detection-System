@@ -1,0 +1,20 @@
+{
+  "name": "agrobloom-ai",
+  "version": "1.0.0",
+  "description": "AgroBloom AI - Advanced Crop and Flower Plant Disease Detection System",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,AI-SERVICE,CLIENT\" -c \"blue,magenta,green\" \"npm --prefix server run dev\" \"python ai-service/main.py\" \"npm --prefix client run dev\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:ai": "python ai-service/main.py",
+    "dev:client": "npm --prefix client run dev",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "test": "npm run test:client && npm run test:server && npm run test:ai",
+    "test:client": "npm --prefix client test",
+    "test:server": "npm --prefix server test",
+    "test:ai": "python -m pytest ai-service/test_ai_endpoints.py -q"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "model_name": "AgroBloom_Crop_MobileNetV2",
+  "num_classes": 11,
+  "classes": [
+    "Apple___Apple_scab",
+    "Apple___Black_rot",
+    "Apple___healthy",
+    "Pepper__bell___Bacterial_spot",
+    "Pepper__bell___healthy",
+    "Potato___Early_blight",
+    "Potato___healthy",
+    "Potato___Late_blight",
+    "Tomato___Early_blight",
+    "Tomato___healthy",
+    "Tomato___Late_blight"
+  ],
+  "training_samples": 1506,
+  "validation_samples": 322,
+  "training_time_seconds": 494.23,
+  "final_train_acc": 0.828021228313446,
+  "final_val_acc": 0.5745341777801514,
+  "final_train_loss": 0.5134703516960144,
+  "final_val_loss": 1.5142927169799805
+}

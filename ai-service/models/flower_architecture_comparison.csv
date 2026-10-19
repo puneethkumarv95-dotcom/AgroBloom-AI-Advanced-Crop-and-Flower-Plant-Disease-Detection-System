@@ -1,0 +1,4 @@
+Architecture,Accuracy,Macro Precision,Macro Recall,Macro Specificity,Macro F1,Weighted F1,Latency (ms),Params,File Size (MB),Training Time (s)
+mobilenetv2,0.75,0.625,0.75,0.9167,0.6667,0.6667,88.53,2428100,20.24,30.88
+efficientnetb0,0.75,0.625,0.75,0.9167,0.6667,0.6667,120.81,4219687,28.45,54.82
+resnet50,0.75,0.625,0.75,0.9167,0.6667,0.6667,122.83,23859204,161.76,66.88

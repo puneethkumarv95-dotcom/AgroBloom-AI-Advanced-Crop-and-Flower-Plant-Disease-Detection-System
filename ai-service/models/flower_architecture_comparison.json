@@ -1,0 +1,368 @@
+{
+  "mobilenetv2": {
+    "architecture": "mobilenetv2",
+    "dataset_type": "flower",
+    "model_file": "flower_mobilenetv2.keras",
+    "file_size_mb": 20.24,
+    "total_parameters": 2428100,
+    "trainable_parameters": 1362180,
+    "non_trainable_parameters": 1065920,
+    "training_time_seconds": 30.88,
+    "accuracy": 0.75,
+    "macro_precision": 0.625,
+    "macro_recall": 0.75,
+    "macro_specificity": 0.9167,
+    "macro_f1_score": 0.6667,
+    "weighted_f1_score": 0.6667,
+    "latency_ms": 88.53,
+    "latency_details": {
+      "iterations": 30,
+      "mean_latency_ms": 88.53,
+      "min_latency_ms": 79.15,
+      "max_latency_ms": 107.57,
+      "std_latency_ms": 6.61
+    },
+    "training_curves": {
+      "train_acc": [
+        0.7379310131072998,
+        0.800000011920929,
+        0.882758617401123
+      ],
+      "val_acc": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "train_loss": [
+        0.7949213981628418,
+        0.4482734799385071,
+        0.38009122014045715
+      ],
+      "val_loss": [
+        0.46749648451805115,
+        0.5274187922477722,
+        0.6321276426315308
+      ]
+    },
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        0
+      ],
+      [
+        10,
+        0,
+        0,
+        0
+      ]
+    ],
+    "per_class": {
+      "Rose___Black_spot": {
+        "class_index": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "specificity": 0.6667,
+        "f1_score": 0.6667,
+        "support": 10,
+        "true_positives": 10,
+        "false_positives": 10,
+        "false_negatives": 0,
+        "true_negatives": 20
+      },
+      "Rose___Downy_mildew": {
+        "class_index": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "specificity": 1.0,
+        "f1_score": 1.0,
+        "support": 10,
+        "true_positives": 10,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_negatives": 30
+      },
+      "Rose___healthy": {
+        "class_index": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "specificity": 1.0,
+        "f1_score": 1.0,
+        "support": 10,
+        "true_positives": 10,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_negatives": 30
+      },
+      "Rose___Insect_infested": {
+        "class_index": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "specificity": 1.0,
+        "f1_score": 0.0,
+        "support": 10,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 10,
+        "true_negatives": 30
+      }
+    }
+  },
+  "efficientnetb0": {
+    "architecture": "efficientnetb0",
+    "dataset_type": "flower",
+    "model_file": "flower_efficientnetb0.keras",
+    "file_size_mb": 28.45,
+    "total_parameters": 4219687,
+    "trainable_parameters": 1510068,
+    "non_trainable_parameters": 2709619,
+    "training_time_seconds": 54.82,
+    "accuracy": 0.75,
+    "macro_precision": 0.625,
+    "macro_recall": 0.75,
+    "macro_specificity": 0.9167,
+    "macro_f1_score": 0.6667,
+    "weighted_f1_score": 0.6667,
+    "latency_ms": 120.81,
+    "latency_details": {
+      "iterations": 30,
+      "mean_latency_ms": 120.81,
+      "min_latency_ms": 91.78,
+      "max_latency_ms": 207.81,
+      "std_latency_ms": 21.05
+    },
+    "training_curves": {
+      "train_acc": [
+        0.7034482955932617,
+        0.8137931227684021,
+        0.834482729434967
+      ],
+      "val_acc": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "train_loss": [
+        0.788176953792572,
+        0.457037091255188,
+        0.3830707371234894
+      ],
+      "val_loss": [
+        0.7069116830825806,
+        0.575637698173523,
+        0.5778648853302002
+      ]
+    },
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        0
+      ],
+      [
+        10,
+        0,
+        0,
+        0
+      ]
+    ],
+    "per_class": {
+      "Rose___Black_spot": {
+        "class_index": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "specificity": 0.6667,
+        "f1_score": 0.6667,
+        "support": 10,
+        "true_positives": 10,
+        "false_positives": 10,
+        "false_negatives": 0,
+        "true_negatives": 20
+      },
+      "Rose___Downy_mildew": {
+        "class_index": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "specificity": 1.0,
+        "f1_score": 1.0,
+        "support": 10,
+        "true_positives": 10,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_negatives": 30
+      },
+      "Rose___healthy": {
+        "class_index": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "specificity": 1.0,
+        "f1_score": 1.0,
+        "support": 10,
+        "true_positives": 10,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_negatives": 30
+      },
+      "Rose___Insect_infested": {
+        "class_index": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "specificity": 1.0,
+        "f1_score": 0.0,
+        "support": 10,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 10,
+        "true_negatives": 30
+      }
+    }
+  },
+  "resnet50": {
+    "architecture": "resnet50",
+    "dataset_type": "flower",
+    "model_file": "flower_resnet50.keras",
+    "file_size_mb": 161.76,
+    "total_parameters": 23859204,
+    "trainable_parameters": 9186180,
+    "non_trainable_parameters": 14673024,
+    "training_time_seconds": 66.88,
+    "accuracy": 0.75,
+    "macro_precision": 0.625,
+    "macro_recall": 0.75,
+    "macro_specificity": 0.9167,
+    "macro_f1_score": 0.6667,
+    "weighted_f1_score": 0.6667,
+    "latency_ms": 122.83,
+    "latency_details": {
+      "iterations": 30,
+      "mean_latency_ms": 122.83,
+      "min_latency_ms": 114.29,
+      "max_latency_ms": 144.2,
+      "std_latency_ms": 7.82
+    },
+    "training_curves": {
+      "train_acc": [
+        0.6965517401695251,
+        0.8413792848587036,
+        0.8689655065536499
+      ],
+      "val_acc": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "train_loss": [
+        0.8430667519569397,
+        0.31508708000183105,
+        0.3605903685092926
+      ],
+      "val_loss": [
+        1.0349515676498413,
+        0.9467411041259766,
+        0.7839666604995728
+      ]
+    },
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        0
+      ],
+      [
+        10,
+        0,
+        0,
+        0
+      ]
+    ],
+    "per_class": {
+      "Rose___Black_spot": {
+        "class_index": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "specificity": 0.6667,
+        "f1_score": 0.6667,
+        "support": 10,
+        "true_positives": 10,
+        "false_positives": 10,
+        "false_negatives": 0,
+        "true_negatives": 20
+      },
+      "Rose___Downy_mildew": {
+        "class_index": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "specificity": 1.0,
+        "f1_score": 1.0,
+        "support": 10,
+        "true_positives": 10,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_negatives": 30
+      },
+      "Rose___healthy": {
+        "class_index": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "specificity": 1.0,
+        "f1_score": 1.0,
+        "support": 10,
+        "true_positives": 10,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_negatives": 30
+      },
+      "Rose___Insect_infested": {
+        "class_index": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "specificity": 1.0,
+        "f1_score": 0.0,
+        "support": 10,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 10,
+        "true_negatives": 30
+      }
+    }
+  }
+}

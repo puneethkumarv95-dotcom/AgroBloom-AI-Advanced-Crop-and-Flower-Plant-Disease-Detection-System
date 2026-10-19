@@ -1,0 +1,55 @@
+{
+  "system": "AgroBloom AI Multi-Model Diagnostic Engine",
+  "architecture": "MobileNetV2 Transfer Learning (Pre-trained on ImageNet)",
+  "input_dimensions": [
+    224,
+    224,
+    3
+  ],
+  "preprocessing": "tf.keras.applications.mobilenet_v2.preprocess_input [-1, 1]",
+  "models": {
+    "crop_model": {
+      "status": "ready",
+      "format": "Keras (.keras)",
+      "classes_count": 11,
+      "classes": [
+        "Apple___Apple_scab",
+        "Apple___Black_rot",
+        "Apple___healthy",
+        "Pepper__bell___Bacterial_spot",
+        "Pepper__bell___healthy",
+        "Potato___Early_blight",
+        "Potato___healthy",
+        "Potato___Late_blight",
+        "Tomato___Early_blight",
+        "Tomato___healthy",
+        "Tomato___Late_blight"
+      ],
+      "accuracy": 0.608,
+      "macro_f1": 0.5764,
+      "macro_precision": 0.7149,
+      "macro_recall": 0.6098,
+      "macro_specificity": 0.9608,
+      "mean_latency_ms": 114.84
+    },
+    "flower_model": {
+      "status": "ready",
+      "format": "Keras (.keras)",
+      "classes_count": 4,
+      "classes": [
+        "Rose___Black_spot",
+        "Rose___Downy_mildew",
+        "Rose___healthy",
+        "Rose___Insect_infested"
+      ],
+      "accuracy": 0.75,
+      "macro_f1": 0.6667,
+      "macro_precision": 0.625,
+      "macro_recall": 0.75,
+      "macro_specificity": 0.9167,
+      "mean_latency_ms": 125.58
+    }
+  },
+  "hardware": "Optimized CPU with oneDNN multi-threading",
+  "timestamp": "2026-10-19T15:40:04Z"
+}

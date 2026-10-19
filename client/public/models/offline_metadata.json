@@ -1,0 +1,1076 @@
+{
+  "version": "1.0.0",
+  "crop_labels": {
+    "0": "Apple___Apple_scab",
+    "1": "Apple___Black_rot",
+    "2": "Apple___healthy",
+    "3": "Pepper__bell___Bacterial_spot",
+    "4": "Pepper__bell___healthy",
+    "5": "Potato___Early_blight",
+    "6": "Potato___healthy",
+    "7": "Potato___Late_blight",
+    "8": "Tomato___Early_blight",
+    "9": "Tomato___healthy",
+    "10": "Tomato___Late_blight"
+  },
+  "flower_labels": {
+    "0": "Rose___Black_spot",
+    "1": "Rose___Downy_mildew",
+    "2": "Rose___healthy",
+    "3": "Rose___Insect_infested"
+  },
+  "knowledge": {
+    "Tomato___Early_blight": {
+      "plant": "Tomato",
+      "plantSpecies": "Solanum lycopersicum",
+      "type": "crop",
+      "disease": "Early Blight",
+      "diseaseCategory": "fungal",
+      "causalAgent": "Alternaria solani (Fungus)",
+      "condition": "diseased",
+      "symptoms": "Dark brown to black necrotic spots with characteristic concentric rings (target-board appearance), surrounded by yellow chlorotic halo on older basal leaves. Stems may develop dark sunken collar rot lesions.",
+      "possibleCauses": "Overwintering fungal mycelium/conidia in solanaceous plant debris; rain splash transmission; warm humid microclimates.",
+      "conditions": "Optimal pathogen germination at 24\u00b0C\u201329\u00b0C (75\u00b0F\u201384\u00b0F) with prolonged relative humidity (>90%) and free surface moisture for 4+ hours.",
+      "severityRisk": "Moderate to High",
+      "observationInterval": "Inspect lower canopy every 3\u20135 days during humid weather; scout twice weekly after precipitation.",
+      "whenToConsultExpert": "Consult local extension if lesions advance past the lower third of the plant canopy or dark sunken lesions encircle main stems.",
+      "recommendations": {
+        "organic": [
+          "Apply Bacillus subtilis (strain QST 713) bio-fungicide spray at 5g/L water.",
+          "Spray cold-pressed pure neem oil extract (3000 ppm) every 7\u201310 days.",
+          "Apply Copper Octanoate (copper soap) or fixed copper preventative spray."
+        ],
+        "chemical": [
+          "Spray Chlorothalonil 75% WP @ 2.0g per liter of water as a multi-site protectant.",
+          "Apply Mancozeb 75% WP @ 2.5g/L or Azoxystrobin 23% SC @ 1.0ml/L at first appearance of target spots."
+        ],
+        "cultural": [
+          "Prune and safely destroy lower diseased leaves (up to 30cm from soil) to prevent ground spore splash.",
+          "Use drip irrigation; avoid overhead sprinkler watering that wets foliage.",
+          "Stake and trellis tomato plants to ensure minimum 60cm spacing and ample airflow."
+        ],
+        "prevention": [
+          "Practice a strict 3-year crop rotation avoiding Solanaceae (potatoes, eggplants, peppers).",
+          "Apply heavy organic straw or black plastic mulch to form a barrier against soil-borne spores."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Tomato Early Blight Management Guidelines",
+          "organization": "University of California Statewide Integrated Pest Management (UC Davis IPM)",
+          "url": "https://ipm.ucanr.edu/agriculture/tomato/early-blight/"
+        },
+        {
+          "title": "Alternaria solani in Solanaceous Crops",
+          "organization": "Cornell Cooperative Extension Vegetable MD Online",
+          "url": "https://vegetablemdonline.ppath.cornell.edu/factsheets/Tomato_EarlyBlt.htm"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c9f\u0cca\u0cae\u0cc6\u0c9f\u0cca \u0cae\u0cc1\u0c82\u0c9a\u0cbf\u0ca8 \u0cb0\u0ccb\u0c97 (Early Blight)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0cae\u0cc7\u0cb2\u0cc6 \u0c95\u0caa\u0ccd\u0caa\u0cc1 \u0cb5\u0cc3\u0ca4\u0ccd\u0ca4\u0cbe\u0c95\u0cbe\u0cb0\u0ca6 \u0c95\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0cb9\u0cb3\u0ca6\u0cbf \u0cac\u0ca3\u0ccd\u0ca3\u0ca6 \u0c97\u0ca1\u0cbf\u0c97\u0cb3\u0cc1 \u0c95\u0cbe\u0ca3\u0cbf\u0cb8\u0cbf\u0c95\u0cca\u0cb3\u0ccd\u0cb3\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0cac\u0cc7\u0cb5\u0cbf\u0ca8 \u0c8e\u0ca3\u0ccd\u0ca3\u0cc6 (Neem Oil) \u0c85\u0ca5\u0cb5\u0cbe \u0cae\u0ccd\u0caf\u0cbe\u0c82\u0c95\u0ccb\u0c9c\u0cc6\u0cac\u0ccd (Mancozeb) \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf. \u0cb9\u0ca8\u0cbf \u0ca8\u0cc0\u0cb0\u0cbe\u0cb5\u0cb0\u0cbf \u0cac\u0cb3\u0cb8\u0cbf."
+      },
+      "hi": {
+        "disease": "\u091f\u092e\u093e\u091f\u0930 \u0915\u093e \u0905\u0917\u0947\u0924\u0940 \u091d\u0941\u0932\u0938\u093e (Early Blight)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u092a\u0930 \u0917\u094b\u0932\u093e\u0915\u093e\u0930 \u092d\u0942\u0930\u0947-\u0915\u093e\u0932\u0947 \u091b\u0932\u094d\u0932\u0947\u0926\u093e\u0930 \u0927\u092c\u094d\u092c\u0947 \u092c\u0928\u0924\u0947 \u0939\u0948\u0902 \u091c\u093f\u0928\u0915\u0947 \u091a\u093e\u0930\u094b\u0902 \u0913\u0930 \u092a\u0940\u0932\u093e \u0918\u0947\u0930\u093e \u0939\u094b\u0924\u093e \u0939\u0948\u0964",
+        "cure": "\u0928\u0940\u092e \u0915\u0947 \u0924\u0947\u0932 \u0915\u093e \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902 \u092f\u093e \u092e\u0948\u0902\u0915\u094b\u091c\u0947\u092c 2.5 \u0917\u094d\u0930\u093e\u092e \u092a\u094d\u0930\u0924\u093f \u0932\u0940\u091f\u0930 \u092a\u093e\u0928\u0940 \u092e\u0947\u0902 \u092e\u093f\u0932\u093e\u0915\u0930 \u091b\u093f\u0921\u093c\u0915\u0947\u0902\u0964"
+      }
+    },
+    "Tomato___Late_blight": {
+      "plant": "Tomato",
+      "plantSpecies": "Solanum lycopersicum",
+      "type": "crop",
+      "disease": "Late Blight",
+      "diseaseCategory": "oomycete",
+      "causalAgent": "Phytophthora infestans (Oomycete)",
+      "condition": "diseased",
+      "symptoms": "Water-soaked, irregular greasy dark green to dark brown lesions expanding rapidly across foliage and stems; delicate white cottony fungal-like sporulation on leaf undersides in humid conditions.",
+      "possibleCauses": "Airborne sporangia carried on wind currents; infected seed tubers or cull piles; cool overcast wet weather.",
+      "conditions": "Cool to moderate temperatures (15\u00b0C\u201322\u00b0C / 60\u00b0F\u201372\u00b0F) accompanied by high relative humidity (>90%) and rain/dew.",
+      "severityRisk": "Critical - Rapid Total Crop Defoliation",
+      "observationInterval": "Daily scouting during cool overcast foggy/rainy periods; inspect leaf undersides and stem forks.",
+      "whenToConsultExpert": "Immediate notification to county extension or university plant clinic recommended upon confirmation due to regional epidemic potential.",
+      "recommendations": {
+        "organic": [
+          "Apply preventative Copper Hydroxide (Bordeaux mixture 1%) thoroughly coating both upper and lower leaf surfaces.",
+          "Spray certified compost tea enriched with Trichoderma harzianum as prophylactic soil wash."
+        ],
+        "chemical": [
+          "Spray Metalaxyl 8% + Mancozeb 64% WP (Ridomil Gold MZ) @ 2.5g/L immediately.",
+          "Apply Cymoxanil 8% + Mancozeb 64% WP @ 2.0g/L or Dimethomorph 50% WP @ 1.0g/L as emergency systemic control."
+        ],
+        "cultural": [
+          "Promptly rogue out and bag severely infected plants; do not compost in home compost piles.",
+          "Avoid late evening watering; ensure morning irrigation dries foliage within 2 hours."
+        ],
+        "prevention": [
+          "Select certified resistant cultivars (e.g., Mountain Magic, Defiant PHR, Plum Regal).",
+          "Eliminate volunteer potato plants and nightshade weeds within a 500m radius."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Late Blight of Tomato and Potato",
+          "organization": "Penn State Extension Plant Pathology",
+          "url": "https://extension.psu.edu/late-blight-of-tomato-and-potato"
+        },
+        {
+          "title": "Phytophthora infestans Management",
+          "organization": "UC Davis IPM Agriculture",
+          "url": "https://ipm.ucanr.edu/agriculture/tomato/late-blight/"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c9f\u0cca\u0cae\u0cc6\u0c9f\u0cca \u0ca4\u0ca1\u0cb5\u0cbe\u0ca6 \u0cb0\u0ccb\u0c97 (Late Blight)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0c95\u0cbe\u0c82\u0ca1\u0ca6 \u0cae\u0cc7\u0cb2\u0cc6 \u0c95\u0caa\u0ccd\u0caa\u0cc1 \u0cac\u0cc2\u0ca6\u0cc1 \u0cac\u0ca3\u0ccd\u0ca3\u0ca6 \u0cae\u0c9a\u0ccd\u0c9a\u0cc6\u0c97\u0cb3\u0cc1 \u0ca4\u0cc0\u0cb5\u0ccd\u0cb0\u0cb5\u0cbe\u0c97\u0cbf \u0cb9\u0cb0\u0ca1\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0cb0\u0cbf\u0ca1\u0ccb\u0cae\u0cbf\u0cb2\u0ccd \u0c8e\u0c82\u0c9d\u0ca1\u0ccd (Ridomil MZ) \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf. \u0cb8\u0ccb\u0c82\u0c95\u0cbf\u0ca4 \u0c97\u0cbf\u0ca1\u0c97\u0cb3\u0ca8\u0ccd\u0ca8\u0cc1 \u0ca4\u0c95\u0ccd\u0cb7\u0ca3\u0cb5\u0cc7 \u0ca8\u0cbe\u0cb6\u0cae\u0cbe\u0ca1\u0cbf."
+      },
+      "hi": {
+        "disease": "\u091f\u092e\u093e\u091f\u0930 \u0915\u093e \u092a\u091b\u0947\u0924\u0940 \u091d\u0941\u0932\u0938\u093e (Late Blight)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u092a\u0930 \u0917\u0939\u0930\u0947 \u092a\u093e\u0928\u0940\u0926\u093e\u0930 \u0927\u092c\u094d\u092c\u0947 \u0914\u0930 \u0928\u093f\u091a\u0932\u0940 \u0938\u0924\u0939 \u092a\u0930 \u0938\u092b\u0947\u0926 \u092b\u092b\u0942\u0902\u0926 \u0926\u093f\u0916\u093e\u0908 \u0926\u0947\u0924\u0940 \u0939\u0948\u0964",
+        "cure": "\u0930\u093f\u0921\u094b\u092e\u093f\u0932 \u090f\u092e\u091c\u0947\u0921 \u092f\u093e \u092c\u094b\u0930\u094d\u0921\u094b \u092e\u093f\u0936\u094d\u0930\u0923 \u0915\u093e \u0924\u0924\u094d\u0915\u093e\u0932 \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964 \u0938\u0902\u0915\u094d\u0930\u092e\u093f\u0924 \u092a\u094c\u0927\u094b\u0902 \u0915\u094b \u0928\u0937\u094d\u091f \u0915\u0930\u0947\u0902\u0964"
+      }
+    },
+    "Tomato___healthy": {
+      "plant": "Tomato",
+      "plantSpecies": "Solanum lycopersicum",
+      "type": "crop",
+      "disease": "Healthy Plant",
+      "diseaseCategory": "healthy",
+      "causalAgent": "None (Optimum Foliar Health)",
+      "condition": "healthy",
+      "symptoms": "Uniform deep emerald green leaves, intact cuticle, vibrant venation, no necrotic spots, chlorotic halos, or fungal growth.",
+      "possibleCauses": "Balanced soil nutrition, optimal watering, disease-free seed stock, good sanitation.",
+      "conditions": "Moderate temperature (20\u00b0C\u201328\u00b0C), 6\u20138 hours direct sunlight, good air circulation.",
+      "severityRisk": "None",
+      "observationInterval": "Routine weekly scouting for early signs of hornworms, whiteflies, or foliar spot onset.",
+      "whenToConsultExpert": "No intervention required. Submit sample only if unexplained wilting or stunting occurs.",
+      "recommendations": {
+        "organic": [
+          "Incorporate organic vermicompost (2kg/plant) at base during flowering.",
+          "Apply prophylactic seaweed emulsion (2ml/L) monthly to support systemic resistance."
+        ],
+        "chemical": [
+          "No chemical pesticides or fungicides required."
+        ],
+        "cultural": [
+          "Maintain drip irrigation schedule delivering 25mm to 35mm water per week.",
+          "Maintain suckering/pruning to keep foliage off bare ground."
+        ],
+        "prevention": [
+          "Scout twice weekly for early hornworm or aphid infestation."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Growing Tomatoes in Home and Commercial Gardens",
+          "organization": "University of Florida IFAS Extension",
+          "url": "https://edis.ifas.ufl.edu/publication/VH028"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c86\u0cb0\u0ccb\u0c97\u0ccd\u0caf\u0c95\u0cb0 \u0c9f\u0cca\u0cae\u0cc6\u0c9f\u0cca \u0cb8\u0cb8\u0ccd\u0caf (Healthy)",
+        "summary": "\u0cb8\u0cb8\u0ccd\u0caf\u0cb5\u0cc1 \u0cb8\u0c82\u0caa\u0cc2\u0cb0\u0ccd\u0ca3\u0cb5\u0cbe\u0c97\u0cbf \u0c86\u0cb0\u0ccb\u0c97\u0ccd\u0caf\u0c95\u0cb0\u0cb5\u0cbe\u0c97\u0cbf\u0ca6\u0ccd\u0ca6\u0cc1 \u0caf\u0cbe\u0cb5\u0cc1\u0ca6\u0cc7 \u0cb0\u0ccb\u0c97 \u0cb2\u0c95\u0ccd\u0cb7\u0ca3\u0c97\u0cb3\u0cbf\u0cb2\u0ccd\u0cb2.",
+        "cure": "\u0caf\u0cbe\u0cb5\u0cc1\u0ca6\u0cc7 \u0c94\u0cb7\u0ca7\u0cbf\u0caf \u0c85\u0c97\u0ca4\u0ccd\u0caf\u0cb5\u0cbf\u0cb2\u0ccd\u0cb2. \u0cb8\u0cbe\u0cae\u0cbe\u0ca8\u0ccd\u0caf \u0ca8\u0cc0\u0cb0\u0cc1 \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0cb8\u0cbe\u0cb5\u0caf\u0cb5 \u0c97\u0cca\u0cac\u0ccd\u0cac\u0cb0 \u0ca8\u0cc0\u0ca1\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0938\u094d\u0935\u0938\u094d\u0925 \u091f\u092e\u093e\u091f\u0930 \u092a\u094c\u0927\u093e (Healthy)",
+        "summary": "\u092a\u094c\u0927\u093e \u092a\u0942\u0930\u0940 \u0924\u0930\u0939 \u0938\u094d\u0935\u0938\u094d\u0925 \u0939\u0948 \u0914\u0930 \u092a\u0924\u094d\u0924\u093f\u092f\u093e\u0901 \u0939\u0930\u0940-\u092d\u0930\u0940 \u0939\u0948\u0902\u0964",
+        "cure": "\u0915\u093f\u0938\u0940 \u0915\u0940\u091f\u0928\u093e\u0936\u0915 \u0915\u0940 \u0906\u0935\u0936\u094d\u092f\u0915\u0924\u093e \u0928\u0939\u0940\u0902 \u0939\u0948\u0964 \u0928\u093f\u092f\u092e\u093f\u0924 \u0926\u0947\u0916\u092d\u093e\u0932 \u091c\u093e\u0930\u0940 \u0930\u0916\u0947\u0902\u0964"
+      }
+    },
+    "Apple___Apple_scab": {
+      "plant": "Apple",
+      "plantSpecies": "Malus domestica",
+      "type": "crop",
+      "disease": "Apple Scab",
+      "diseaseCategory": "fungal",
+      "causalAgent": "Venturia inaequalis (Fungus)",
+      "condition": "diseased",
+      "symptoms": "Olive-green velvety to sooty black circular lesions with feathered margins on upper leaf surfaces; affected leaves turn yellow and drop prematurely; fruit develops dark corky scabs.",
+      "possibleCauses": "Overwintering pseudothecia in fallen leaf litter releasing ascospores during spring rain events.",
+      "conditions": "Optimal infection at 15\u00b0C\u201321\u00b0C (60\u00b0F\u201370\u00b0F) requiring continuous leaf wetness between 6 and 9 hours.",
+      "severityRisk": "Moderate",
+      "observationInterval": "Scout weekly from green tip through fruit set; inspect cluster leaves close to spur wood.",
+      "whenToConsultExpert": "Consult fruit extension pathologist if primary scab lesions exceed 10% before petal fall.",
+      "recommendations": {
+        "organic": [
+          "Spray wettable sulfur or potassium bicarbonate at tight cluster and petal fall.",
+          "Apply bio-fungicide Bacillus amyloliquefaciens prior to forecasted rain."
+        ],
+        "chemical": [
+          "Apply Difenoconazole 25% EC @ 0.5ml/L or Captan 50% WP @ 2.5g/L.",
+          "Spray Myclobutanil 20% WP @ 0.5g/L during early post-infection period."
+        ],
+        "cultural": [
+          "Rake, chop, and shred fallen leaves in autumn or spray 5% urea to accelerate decomposition.",
+          "Prune open-center canopy to accelerate leaf drying after spring rains."
+        ],
+        "prevention": [
+          "Plant scab-resistant apple cultivars such as Liberty, Prima, GoldRush, or Enterprise."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Apple Scab Integrated Pest Management",
+          "organization": "Cornell Cooperative Extension Fruit IPM",
+          "url": "https://treefruit.wsu.edu/crop-protection/disease-management/apple-scab/"
+        },
+        {
+          "title": "Venturia inaequalis Pathology and Control",
+          "organization": "Penn State Extension Tree Fruit Production Guide",
+          "url": "https://extension.psu.edu/apple-scab"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0cb8\u0cc7\u0cac\u0cc1 \u0cb8\u0ccd\u0c95\u0ccd\u0caf\u0cbe\u0cac\u0ccd \u0cb0\u0ccb\u0c97 (Apple Scab)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0cae\u0cc7\u0cb2\u0cc6 \u0c95\u0caa\u0ccd\u0caa\u0cc1-\u0cb9\u0cb8\u0cbf\u0cb0\u0cc1 \u0cb5\u0cc6\u0cb2\u0ccd\u0cb5\u0cc6\u0c9f\u0ccd \u0cae\u0cbe\u0ca6\u0cb0\u0cbf\u0caf \u0c95\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0c89\u0c82\u0c9f\u0cbe\u0c97\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0c95\u0ccd\u0caf\u0cbe\u0caa\u0ccd\u0c9f\u0cbe\u0ca8\u0ccd \u0c85\u0ca5\u0cb5\u0cbe \u0ca1\u0cc8\u0cab\u0cc6\u0ca8\u0cca\u0c95\u0cca\u0ca8\u0cbe\u0c9c\u0ccb\u0cb2\u0ccd \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf. \u0cac\u0cbf\u0ca6\u0ccd\u0ca6 \u0c8e\u0cb2\u0cc6\u0c97\u0cb3\u0ca8\u0ccd\u0ca8\u0cc1 \u0ca4\u0ccb\u0c9f\u0ca6\u0cbf\u0c82\u0ca6 \u0ca4\u0cc6\u0c97\u0cc6\u0caf\u0cbf\u0cb0\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0938\u0947\u092c \u0915\u093e \u0938\u094d\u0915\u0947\u092c (Apple Scab)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u0914\u0930 \u092b\u0932\u094b\u0902 \u092a\u0930 \u091c\u0948\u0924\u0942\u0928-\u0939\u0930\u0947 \u0938\u0947 \u0915\u093e\u0932\u0947 \u0916\u0941\u0930\u0926\u0941\u0930\u0947 \u0927\u092c\u094d\u092c\u0947 \u092a\u0921\u093c \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "cure": "\u0915\u0948\u092a\u094d\u091f\u0928 \u092f\u093e \u0921\u093e\u0907\u092b\u0947\u0928\u094b\u0915\u094b\u0928\u093e\u091c\u094b\u0932 \u0915\u093e \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964 \u0917\u093f\u0930\u0947 \u0939\u0941\u090f \u092a\u0924\u094d\u0924\u094b\u0902 \u0915\u094b \u0928\u0937\u094d\u091f \u0915\u0930\u0947\u0902\u0964"
+      }
+    },
+    "Apple___Black_rot": {
+      "plant": "Apple",
+      "plantSpecies": "Malus domestica",
+      "type": "crop",
+      "disease": "Black Rot (Frogeye Leaf Spot)",
+      "causalAgent": "Botryosphaeria obtusa (Fungus)",
+      "condition": "diseased",
+      "symptoms": "Frogeye foliar spots with small purple flecks expanding into tan circular centers with sharp purple borders; cankers on scaffold branches; mummified black fruit remaining attached to limbs.",
+      "possibleCauses": "Fungal spore release from fire blight cankers, winter-damaged dead wood, and mummified fruit.",
+      "conditions": "Temperature 20\u00b0C\u201327\u00b0C (68\u00b0F\u201380\u00b0F) with 9 hours of wetting required for foliar infection.",
+      "severityRisk": "High",
+      "observationInterval": "Inspect orchard trees every 7\u201310 days from bloom through midsummer, especially after hail.",
+      "whenToConsultExpert": "Consult fruit specialist if active branch cankers threaten trunk or main scaffold limbs.",
+      "recommendations": {
+        "organic": [
+          "Apply fixed copper sprays during dormant season and silver tip stage.",
+          "Spray sulfur-based protectant fungicide every 10 days post-bloom."
+        ],
+        "chemical": [
+          "Spray Thiophanate-methyl 70% WP @ 1.0g/L or Pyraclostrobin + Boscalid @ 1.5g/L.",
+          "Apply Captan 50% WP @ 2.5g/L at 14-day intervals from petal fall."
+        ],
+        "cultural": [
+          "Prune out dead wood, fire-blighted spurs, and cankers at least 15cm below visible margin.",
+          "Remove and burn all mummified fruit from trees and orchard floor before bud break."
+        ],
+        "prevention": [
+          "Avoid mechanical wounding of bark and protect against winter sunscald with white latex trunk paint."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Black Rot of Apple",
+          "organization": "Penn State Extension Tree Fruit Disease Guide",
+          "url": "https://extension.psu.edu/apple-disease-black-rot"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0cb8\u0cc7\u0cac\u0cc1 \u0c95\u0caa\u0ccd\u0caa\u0cc1 \u0c95\u0cca\u0cb3\u0cc6\u0ca4 (Black Rot)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0cae\u0cc7\u0cb2\u0cc6 \u0c95\u0c82\u0ca6\u0cc1-\u0ca8\u0cc7\u0cb0\u0cb3\u0cc6 \u0cac\u0ca3\u0ccd\u0ca3\u0ca6 \u0c95\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0c95\u0cca\u0c82\u0cac\u0cc6\u0c97\u0cb3 \u0cae\u0cc7\u0cb2\u0cc6 \u0cb9\u0cc1\u0ca3\u0ccd\u0ca3\u0cc1\u0c97\u0cb3\u0cc1 \u0c89\u0c82\u0c9f\u0cbe\u0c97\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0ca5\u0cbf\u0caf\u0ccb\u0cab\u0ca8\u0cc7\u0c9f\u0ccd-\u0cae\u0cbf\u0ca5\u0cc8\u0cb2\u0ccd \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf. \u0c92\u0ca3\u0c97\u0cbf\u0ca6 \u0c95\u0cca\u0c82\u0cac\u0cc6\u0c97\u0cb3\u0ca8\u0ccd\u0ca8\u0cc1 \u0c95\u0ca4\u0ccd\u0ca4\u0cb0\u0cbf\u0cb8\u0cbf \u0ca4\u0cc6\u0c97\u0cc6\u0caf\u0cbf\u0cb0\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0938\u0947\u092c \u0915\u0940 \u0915\u093e\u0932\u0940 \u0938\u0921\u093c\u0928 (Black Rot)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u092a\u0930 \u092c\u0948\u0902\u0917\u0928\u0940 \u0915\u093f\u0928\u093e\u0930\u094b\u0902 \u0935\u093e\u0932\u0947 \u0927\u092c\u094d\u092c\u0947 \u092c\u0928\u0924\u0947 \u0939\u0948\u0902 \u0914\u0930 \u0924\u0928\u0947 \u092a\u0930 \u0918\u093e\u0935 \u0939\u094b \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "cure": "\u0925\u093f\u092f\u094b\u092b\u0948\u0928\u0947\u091f-\u092e\u093f\u0925\u093e\u0907\u0932 \u0915\u093e \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902 \u0914\u0930 \u0938\u0942\u0916\u0940 \u0938\u0902\u0915\u094d\u0930\u092e\u093f\u0924 \u0936\u093e\u0916\u093e\u0913\u0902 \u0915\u094b \u091b\u093e\u0902\u091f \u0926\u0947\u0902\u0964"
+      }
+    },
+    "Apple___healthy": {
+      "plant": "Apple",
+      "plantSpecies": "Malus domestica",
+      "type": "crop",
+      "disease": "Healthy Apple Tree",
+      "diseaseCategory": "healthy",
+      "causalAgent": "None",
+      "condition": "healthy",
+      "symptoms": "Vigorous serrated dark green leaves, supple shoot growth, firm fruit without spots or corking.",
+      "possibleCauses": "Effective winter orchard sanitation, proper canopy thinning, balanced nitrogen feeding.",
+      "conditions": "Full sunlight (minimum 6\u20138 hours), well-aerated sandy-loam soil with pH 6.0\u20137.0.",
+      "severityRisk": "None",
+      "observationInterval": "Scout bi-weekly for mite webbing, aphid colonies, and codling moth entry points.",
+      "whenToConsultExpert": "No treatment needed.",
+      "recommendations": {
+        "organic": [
+          "Maintain orchard sod or compost mulch 30cm away from trunk."
+        ],
+        "chemical": [
+          "No intervention required."
+        ],
+        "cultural": [
+          "Maintain annual dormant pruning for sunlight penetration."
+        ],
+        "prevention": [
+          "Install pheromone traps to monitor insect pest flight."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Integrated Orchard Management for Commercial Apples",
+          "organization": "Washington State University Extension",
+          "url": "https://treefruit.wsu.edu/orchard-management/"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c86\u0cb0\u0ccb\u0c97\u0ccd\u0caf\u0c95\u0cb0 \u0cb8\u0cc7\u0cac\u0cc1 \u0cb8\u0cb8\u0ccd\u0caf (Healthy)",
+        "summary": "\u0cb8\u0cb8\u0ccd\u0caf\u0cb5\u0cc1 \u0c89\u0ca4\u0ccd\u0ca4\u0cae \u0cb8\u0ccd\u0ca5\u0cbf\u0ca4\u0cbf\u0caf\u0cb2\u0ccd\u0cb2\u0cbf\u0ca6\u0cc6.",
+        "cure": "\u0ca8\u0cbf\u0caf\u0cae\u0cbf\u0ca4 \u0caa\u0ccb\u0cb7\u0ca3\u0cc6 \u0ca8\u0cc0\u0ca1\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0938\u094d\u0935\u0938\u094d\u0925 \u0938\u0947\u092c \u0915\u093e \u092a\u0947\u0921\u093c (Healthy)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u093e\u0902 \u092a\u0942\u0930\u0940 \u0924\u0930\u0939 \u0938\u094d\u0935\u0938\u094d\u0925 \u0939\u0948\u0902\u0964",
+        "cure": "\u0938\u0902\u0924\u0941\u0932\u093f\u0924 \u092a\u094b\u0937\u0923 \u0914\u0930 \u0938\u093f\u0902\u091a\u093e\u0908 \u091c\u093e\u0930\u0940 \u0930\u0916\u0947\u0902\u0964"
+      }
+    },
+    "Pepper__bell___Bacterial_spot": {
+      "plant": "Bell Pepper",
+      "plantSpecies": "Capsicum annuum",
+      "type": "crop",
+      "disease": "Bacterial Spot",
+      "diseaseCategory": "bacterial",
+      "causalAgent": "Xanthomonas campestris pv. vesicatoria (Bacterium)",
+      "condition": "diseased",
+      "symptoms": "Small, angular, water-soaked lesions on leaf undersides, turning brown-black with yellow chlorotic borders; leaves quickly turn yellow and drop, exposing developing pods to sunscald.",
+      "possibleCauses": "Seed-borne bacterial pathogen; splashing rain, sprinkler irrigation, handling wet foliage.",
+      "conditions": "Warm temperatures (24\u00b0C\u201330\u00b0C / 75\u00b0F\u201386\u00b0F) combined with rain storms and high relative humidity (>85%).",
+      "severityRisk": "High",
+      "observationInterval": "Scout twice weekly during monsoon/rainy weather; check lower interior canopy leaves.",
+      "whenToConsultExpert": "Consult agricultural extension if leaf drop exceeds 20% or pod lesions appear on commercial crop.",
+      "recommendations": {
+        "organic": [
+          "Spray Copper Oxychloride 50% WP @ 2.5g/L combined with Streptocycline 100ppm.",
+          "Apply bio-bactericide Bacillus amyloliquefaciens (Double Nickel) on 5-day cycle."
+        ],
+        "chemical": [
+          "Apply Copper Hydroxide + Mancozeb tank mix @ 2.0g/L each at 7-day intervals.",
+          "Apply Actigard 50WG (Acibenzolar-S-methyl) to activate systemic acquired resistance (SAR)."
+        ],
+        "cultural": [
+          "Never work or harvest pepper beds while leaves are wet with dew or rain.",
+          "Disinfect harvesting shears and stakes with 10% bleach or quaternary ammonium solution."
+        ],
+        "prevention": [
+          "Use hot-water treated or certified disease-free pepper seeds; purchase resistant varieties (races 1\u201310 resistant)."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Bacterial Spot of Pepper and Tomato",
+          "organization": "University of Florida IFAS Extension EDIS",
+          "url": "https://edis.ifas.ufl.edu/publication/VH052"
+        },
+        {
+          "title": "Pepper Bacterial Spot Management",
+          "organization": "UC Davis IPM Agriculture",
+          "url": "https://ipm.ucanr.edu/agriculture/peppers/bacterial-spot/"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c95\u0ccd\u0caf\u0cbe\u0caa\u0ccd\u0cb8\u0cbf\u0c95\u0c82 \u0cac\u0ccd\u0caf\u0cbe\u0c95\u0ccd\u0c9f\u0cc0\u0cb0\u0cbf\u0caf\u0cbe\u0ca6 \u0c9a\u0cc1\u0c95\u0ccd\u0c95\u0cc6 \u0cb0\u0ccb\u0c97 (Bacterial Spot)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0cae\u0cc7\u0cb2\u0cc6 \u0ca8\u0cc0\u0cb0\u0cbf\u0ca8\u0cbf\u0c82\u0ca6 \u0c95\u0cc2\u0ca1\u0cbf\u0ca6 \u0cb8\u0ca3\u0ccd\u0ca3 \u0c95\u0c82\u0ca6\u0cc1 \u0c95\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0c89\u0c82\u0c9f\u0cbe\u0c97\u0cbf \u0c8e\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0c89\u0ca6\u0cc1\u0cb0\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0c95\u0cbe\u0caa\u0cb0\u0ccd \u0c86\u0c95\u0ccd\u0cb8\u0cbf\u0c95\u0ccd\u0cb2\u0ccb\u0cb0\u0cc8\u0ca1\u0ccd \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0cb8\u0ccd\u0c9f\u0ccd\u0cb0\u0cc6\u0caa\u0ccd\u0c9f\u0cca\u0cb8\u0cc8\u0c95\u0ccd\u0cb2\u0cbf\u0ca8\u0ccd \u0cae\u0cbf\u0cb6\u0ccd\u0cb0\u0ca3 \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0936\u093f\u092e\u0932\u093e \u092e\u093f\u0930\u094d\u091a \u0915\u093e \u091c\u0940\u0935\u093e\u0923\u0941 \u0927\u092c\u094d\u092c\u093e (Bacterial Spot)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u092a\u0930 \u091b\u094b\u091f\u0947 \u0915\u094b\u0923\u0940\u092f \u092a\u093e\u0928\u0940\u0926\u093e\u0930 \u092d\u0942\u0930\u0947 \u0927\u092c\u094d\u092c\u0947 \u092a\u0921\u093c\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "cure": "\u0915\u0949\u092a\u0930 \u0911\u0915\u094d\u0938\u0940\u0915\u094d\u0932\u094b\u0930\u093e\u0907\u0921 \u0914\u0930 \u0938\u094d\u091f\u094d\u0930\u0947\u092a\u094d\u091f\u094b\u0938\u093e\u0907\u0915\u094d\u0932\u093f\u0928 \u0915\u093e \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964"
+      }
+    },
+    "Pepper__bell___healthy": {
+      "plant": "Bell Pepper",
+      "plantSpecies": "Capsicum annuum",
+      "type": "crop",
+      "disease": "Healthy Bell Pepper",
+      "diseaseCategory": "healthy",
+      "causalAgent": "None",
+      "condition": "healthy",
+      "symptoms": "Lush glossy dark-green leaf lamina, strong apical growth, upright sturdy branching with prolific white star flowers.",
+      "possibleCauses": "Appropriate soil temperature (>18\u00b0C), drip fertigation, well-draining soil.",
+      "conditions": "Temperature 22\u00b0C\u201328\u00b0C, soil pH 6.2\u20136.8, consistent moisture without saturation.",
+      "severityRisk": "None",
+      "observationInterval": "Check every 5\u20137 days for thrips, mites, or blossom-end rot on expanding fruit.",
+      "whenToConsultExpert": "No intervention required.",
+      "recommendations": {
+        "organic": [
+          "Side-dress with compost and balanced fish-kelp fertilizer every 3 weeks."
+        ],
+        "chemical": [
+          "No chemicals needed."
+        ],
+        "cultural": [
+          "Maintain 45cm plant spacing and stake heavy fruiting branches."
+        ],
+        "prevention": [
+          "Maintain reflective silver mulch to repel aphid and thrips vectors."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Bell Pepper Production Guidelines",
+          "organization": "Penn State Extension Vegetable Production",
+          "url": "https://extension.psu.edu/bell-pepper-production"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c86\u0cb0\u0ccb\u0c97\u0ccd\u0caf\u0c95\u0cb0 \u0c95\u0ccd\u0caf\u0cbe\u0caa\u0ccd\u0cb8\u0cbf\u0c95\u0c82 \u0cb8\u0cb8\u0ccd\u0caf (Healthy)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0cb9\u0cca\u0cb3\u0caa\u0cbf\u0ca8\u0cbf\u0c82\u0ca6 \u0c95\u0cc2\u0ca1\u0cbf\u0ca6\u0ccd\u0ca6\u0cc1 \u0cb8\u0c82\u0caa\u0cc2\u0cb0\u0ccd\u0ca3 \u0c86\u0cb0\u0ccb\u0c97\u0ccd\u0caf\u0c95\u0cb0\u0cb5\u0cbe\u0c97\u0cbf\u0cb5\u0cc6.",
+        "cure": "\u0cb8\u0cbe\u0cb5\u0caf\u0cb5 \u0ca8\u0cc0\u0cb0\u0cbe\u0cb5\u0cb0\u0cbf \u0caa\u0ca6\u0ccd\u0ca7\u0ca4\u0cbf \u0cae\u0cc1\u0c82\u0ca6\u0cc1\u0cb5\u0cb0\u0cbf\u0cb8\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0938\u094d\u0935\u0938\u094d\u0925 \u0936\u093f\u092e\u0932\u093e \u092e\u093f\u0930\u094d\u091a (Healthy)",
+        "summary": "\u092a\u094c\u0927\u093e \u0939\u0930\u093e-\u092d\u0930\u093e \u0914\u0930 \u091a\u092e\u0915\u0926\u093e\u0930 \u0939\u0948\u0964",
+        "cure": "\u0938\u0902\u0924\u0941\u0932\u093f\u0924 \u0916\u093e\u0926 \u0914\u0930 \u092a\u093e\u0928\u0940 \u0926\u0947\u0902\u0964"
+      }
+    },
+    "Potato___Early_blight": {
+      "plant": "Potato",
+      "plantSpecies": "Solanum tuberosum",
+      "type": "crop",
+      "disease": "Early Blight",
+      "diseaseCategory": "fungal",
+      "causalAgent": "Alternaria solani (Fungus)",
+      "condition": "diseased",
+      "symptoms": "Concentric ring target-like dark brown necrotic spots initiating on mature basal foliage; leaves yellow and senesce prematurely; lesions bounded by major veins.",
+      "possibleCauses": "Soil-borne crop residues; plant stress from tuber bulking, low nitrogen, or drought.",
+      "conditions": "Alternating wet and dry periods with temperatures around 24\u00b0C\u201329\u00b0C.",
+      "severityRisk": "Moderate",
+      "observationInterval": "Inspect lower canopy every 4\u20136 days starting at tuber initiation (flowering).",
+      "whenToConsultExpert": "Consult agronomist if foliar defoliation exceeds 15% during early bulking stage.",
+      "recommendations": {
+        "organic": [
+          "Apply copper octanoate (soap) or bio-fungicide Bacillus subtilis at 7-day intervals.",
+          "Spray cold-pressed neem formulation 10,000 ppm @ 2ml/L."
+        ],
+        "chemical": [
+          "Spray Mancozeb 75% WP @ 2.5g/L or Propineb 70% WP @ 2.0g/L.",
+          "Apply Azoxystrobin 23% SC @ 1.0ml/L or Difenoconazole @ 0.5ml/L."
+        ],
+        "cultural": [
+          "Hill up rows thoroughly with loose soil to prevent spore washing onto shallow tubers.",
+          "Avoid overhead irrigation in late afternoon; allow foliage to dry rapidly."
+        ],
+        "prevention": [
+          "Maintain optimum nitrogen and potassium nutrition to avoid early senescence.",
+          "Practice 3-year crop rotation with non-solanaceous crops."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Early Blight of Potato",
+          "organization": "University of Idaho Extension Potato Pathology",
+          "url": "https://www.uidaho.edu/extension/ipm/crop-management/potato"
+        },
+        {
+          "title": "Potato Early Blight Guidelines",
+          "organization": "UC Davis IPM Agriculture",
+          "url": "https://ipm.ucanr.edu/agriculture/potato/early-blight/"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c86\u0cb2\u0cc2\u0c97\u0ca1\u0ccd\u0ca1\u0cc6 \u0cae\u0cc1\u0c82\u0c9a\u0cbf\u0ca8 \u0cb0\u0ccb\u0c97 (Early Blight)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0cae\u0cc7\u0cb2\u0cc6 \u0c95\u0c82\u0ca6\u0cc1 \u0cac\u0ca3\u0ccd\u0ca3\u0ca6 \u0cb5\u0cb2\u0caf\u0cbe\u0c95\u0cbe\u0cb0\u0ca6 \u0c95\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0c95\u0c82\u0ca1\u0cc1\u0cac\u0cb0\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0cae\u0ccd\u0caf\u0cbe\u0c82\u0c95\u0ccb\u0c9c\u0cc6\u0cac\u0ccd 2.5 \u0c97\u0ccd\u0cb0\u0cbe\u0c82 \u0caa\u0ccd\u0cb0\u0ca4\u0cbf \u0cb2\u0cc0\u0c9f\u0cb0\u0ccd \u0ca8\u0cc0\u0cb0\u0cbf\u0c97\u0cc6 \u0cac\u0cc6\u0cb0\u0cc6\u0cb8\u0cbf \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0906\u0932\u0942 \u0915\u093e \u0905\u0917\u0947\u0924\u0940 \u091d\u0941\u0932\u0938\u093e (Early Blight)",
+        "summary": "\u0928\u093f\u091a\u0932\u0940 \u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u092a\u0930 \u0917\u094b\u0932 \u091b\u0932\u094d\u0932\u0947\u0926\u093e\u0930 \u092d\u0942\u0930\u0947 \u0927\u092c\u094d\u092c\u0947 \u0926\u093f\u0916\u093e\u0908 \u0926\u0947\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "cure": "\u092e\u0948\u0902\u0915\u094b\u091c\u0947\u092c 2.5 \u0917\u094d\u0930\u093e\u092e/\u0932\u0940\u091f\u0930 \u0915\u093e \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964 \u092a\u094c\u0927\u094b\u0902 \u092a\u0930 \u092e\u093f\u091f\u094d\u091f\u0940 \u091a\u0922\u093c\u093e\u090f\u0902\u0964"
+      }
+    },
+    "Potato___Late_blight": {
+      "plant": "Potato",
+      "plantSpecies": "Solanum tuberosum",
+      "type": "crop",
+      "disease": "Late Blight",
+      "diseaseCategory": "oomycete",
+      "causalAgent": "Phytophthora infestans (Oomycete)",
+      "condition": "diseased",
+      "symptoms": "Large, dark brown to purplish-black water-soaked lesions expanding rapidly; white fuzzy mold on leaf undersides in morning dew; entire vine collapses with pungent rot smell.",
+      "possibleCauses": "Infected seed tubers; cull potato piles; windblown sporangia from neighboring infected fields.",
+      "conditions": "Cool, damp weather with temperatures 10\u00b0C\u201321\u00b0C and relative humidity >90% for 8+ hours.",
+      "severityRisk": "Critical Epidemic Hazard",
+      "observationInterval": "Scout daily during prolonged wet, foggy, or rainy cool spells.",
+      "whenToConsultExpert": "Immediate mandatory reporting to local agricultural department/extension officer.",
+      "recommendations": {
+        "organic": [
+          "Apply preventative Copper Hydroxide (Bordeaux mixture 1%) thoroughly ahead of rainy weather.",
+          "Incorporate bio-protectant Trichoderma viride into soil at planting."
+        ],
+        "chemical": [
+          "Spray Dimethomorph 50% WP @ 1.0g/L + Mancozeb 75% WP @ 2.0g/L immediately.",
+          "Apply Metalaxyl-M + Chlorothalonil or Mandipropamid 23.4% SC @ 1.0ml/L."
+        ],
+        "cultural": [
+          "Desiccate or kill potato haulms 14 days prior to harvest to prevent tuber contact with live spores.",
+          "Never harvest tubers from fields with active foliar late blight during wet conditions."
+        ],
+        "prevention": [
+          "Plant only certified disease-tested seed tubers from reputable government/certified agencies.",
+          "Eradicate cull piles and volunteer potato sprouts by deep burial or herbicide."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Potato Late Blight Management",
+          "organization": "Michigan State University Extension Potato Diseases",
+          "url": "https://www.canr.msu.edu/potato/diseases/"
+        },
+        {
+          "title": "Phytophthora infestans on Potato",
+          "organization": "CABI Digital Library Compendium",
+          "url": "https://www.cabidigitallibrary.org/doi/10.1079/cabicompendium.40970"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c86\u0cb2\u0cc2\u0c97\u0ca1\u0ccd\u0ca1\u0cc6 \u0ca4\u0ca1\u0cb5\u0cbe\u0ca6 \u0cb0\u0ccb\u0c97 (Late Blight)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0c95\u0cbe\u0c82\u0ca1 \u0c95\u0caa\u0ccd\u0caa\u0cbe\u0c97\u0cbf \u0c95\u0cca\u0cb3\u0cc6\u0caf\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0ca1\u0cc8\u0cae\u0cc6\u0ca5\u0ccb\u0cae\u0cbe\u0cb0\u0ccd\u0cab\u0ccd \u0c85\u0ca5\u0cb5\u0cbe \u0cac\u0ccb\u0cb0\u0ccd\u0ca1\u0ccb \u0cae\u0cbf\u0cb6\u0ccd\u0cb0\u0ca3 \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0906\u0932\u0942 \u0915\u093e \u092a\u091b\u0947\u0924\u0940 \u091d\u0941\u0932\u0938\u093e (Late Blight)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u093e\u0902 \u0914\u0930 \u0924\u0928\u0947 \u0924\u0947\u091c\u0940 \u0938\u0947 \u0915\u093e\u0932\u0947 \u092a\u0921\u093c\u0915\u0930 \u0938\u0921\u093c\u0928\u0947 \u0932\u0917\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "cure": "\u0921\u093e\u0907\u092e\u0947\u0925\u094b\u092e\u0949\u0930\u094d\u092b \u092f\u093e \u0930\u093f\u0921\u094b\u092e\u093f\u0932 \u0915\u093e \u0924\u0941\u0930\u0902\u0924 \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964"
+      }
+    },
+    "Potato___healthy": {
+      "plant": "Potato",
+      "plantSpecies": "Solanum tuberosum",
+      "type": "crop",
+      "disease": "Healthy Potato Plant",
+      "diseaseCategory": "healthy",
+      "causalAgent": "None",
+      "condition": "healthy",
+      "symptoms": "Vibrant composite dark-green leaves, robust upright haulms, intact margins, zero foliar water-soaking or necrotic lesions.",
+      "possibleCauses": "Certified disease-free seed, balanced potash nutrition, well-draining mounded beds.",
+      "conditions": "Daytime 18\u00b0C\u201324\u00b0C, night 12\u00b0C\u201316\u00b0C, loose sandy loam with pH 5.2\u20136.5.",
+      "severityRisk": "None",
+      "observationInterval": "Scout weekly for potato beetles, aphids, and early leaf spots.",
+      "whenToConsultExpert": "No intervention required.",
+      "recommendations": {
+        "organic": [
+          "Side-dress with potassium-rich wood ash or sulfate of potash at hilling."
+        ],
+        "chemical": [
+          "No intervention required."
+        ],
+        "cultural": [
+          "Maintain hilling to ensure tubers are shielded from direct sunlight (greening)."
+        ],
+        "prevention": [
+          "Practice 3-year crop rotation avoiding solanaceous crops."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Potato Commercial Production Guide",
+          "organization": "Cornell Cooperative Extension",
+          "url": "https://cals.cornell.edu/crop-and-soil-sciences"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c86\u0cb0\u0ccb\u0c97\u0ccd\u0caf\u0c95\u0cb0 \u0c86\u0cb2\u0cc2\u0c97\u0ca1\u0ccd\u0ca1\u0cc6 \u0cb8\u0cb8\u0ccd\u0caf (Healthy)",
+        "summary": "\u0cb8\u0cb8\u0ccd\u0caf\u0cb5\u0cc1 \u0c89\u0ca4\u0ccd\u0ca4\u0cae \u0cb9\u0cb8\u0cbf\u0cb0\u0cbf\u0ca8\u0cbf\u0c82\u0ca6 \u0c95\u0cc2\u0ca1\u0cbf\u0ca6\u0cc6.",
+        "cure": "\u0cb8\u0cbe\u0cae\u0cbe\u0ca8\u0ccd\u0caf \u0c86\u0cb0\u0cc8\u0c95\u0cc6 \u0cae\u0cc1\u0c82\u0ca6\u0cc1\u0cb5\u0cb0\u0cbf\u0cb8\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0938\u094d\u0935\u0938\u094d\u0925 \u0906\u0932\u0942 \u0915\u093e \u092a\u094c\u0927\u093e (Healthy)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u093e\u0902 \u092a\u0942\u0930\u0940 \u0924\u0930\u0939 \u0938\u094d\u0935\u0938\u094d\u0925 \u0914\u0930 \u0939\u0930\u0940 \u0939\u0948\u0902\u0964",
+        "cure": "\u0938\u0902\u0924\u0941\u0932\u093f\u0924 \u0938\u093f\u0902\u091a\u093e\u0908 \u0914\u0930 \u092a\u094b\u091f\u093e\u0936 \u092f\u0941\u0915\u094d\u0924 \u0916\u093e\u0926 \u0926\u0947\u0902\u0964"
+      }
+    },
+    "Rose___Black_spot": {
+      "plant": "Rose",
+      "plantSpecies": "Rosa spp.",
+      "type": "flower",
+      "disease": "Rose Black Spot",
+      "diseaseCategory": "fungal",
+      "causalAgent": "Diplocarpon rosae (Fungus)",
+      "condition": "diseased",
+      "symptoms": "Circular black spots (2mm\u201312mm) with fringed, feathery margins on upper leaf surfaces; tissue surrounding spots turns yellow; severe premature defoliation starting from bottom branches.",
+      "possibleCauses": "Water-splash dispersal of conidia from overwintering cane lesions or fallen leaves; wet leaf surfaces.",
+      "conditions": "Temperature 20\u00b0C\u201327\u00b0C (68\u00b0F\u201380\u00b0F) requiring continuous leaf wetness for minimum 7 hours.",
+      "severityRisk": "High (Floral Aesthetic Loss & Shrub Weakening)",
+      "observationInterval": "Scout rose bushes every 5 days from spring bud burst through late autumn.",
+      "whenToConsultExpert": "Consult local master gardener or rose society if defoliation exceeds 40% of canopy.",
+      "recommendations": {
+        "organic": [
+          "Spray potassium bicarbonate (3g/L) mixed with horticultural oil.",
+          "Apply cold-pressed pure neem oil (5ml/L) early in the morning every 7\u201310 days."
+        ],
+        "chemical": [
+          "Apply Tebuconazole 25.9% EC @ 1.0ml/L or Myclobutanil 10% WP @ 1.0g/L.",
+          "Spray Trifloxystrobin + Tebuconazole combination fungicide at 14-day intervals."
+        ],
+        "cultural": [
+          "Rake and safely discard all fallen black-spotted rose leaves; do not compost.",
+          "Water rose bases directly via drip or soaker hoses; keep foliage completely dry.",
+          "Prune dense interior shoots to ensure ample sunlight and airflow."
+        ],
+        "prevention": [
+          "Select resistant cultivars (e.g., Knock Out, Flower Carpet, Oso Easy series).",
+          "Plant in locations receiving at least 6 hours of morning direct sunlight."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Rose Black Spot Management",
+          "organization": "Royal Horticultural Society (RHS Plant Pathology)",
+          "url": "https://www.rhs.org.uk/disease/rose-black-spot"
+        },
+        {
+          "title": "Black Spot on Roses in the Landscape",
+          "organization": "University of California Statewide IPM Program",
+          "url": "https://ipm.ucanr.edu/PMG/GARDEN/PLANTS/DISEASES/roseblackspot.html"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c97\u0cc1\u0cb2\u0cbe\u0cac\u0cbf \u0c95\u0caa\u0ccd\u0caa\u0cc1 \u0c9a\u0cc1\u0c95\u0ccd\u0c95\u0cc6 \u0cb0\u0ccb\u0c97 (Black Spot)",
+        "summary": "\u0c97\u0cc1\u0cb2\u0cbe\u0cac\u0cbf \u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0cae\u0cc7\u0cb2\u0cc6 \u0c95\u0caa\u0ccd\u0caa\u0cc1 \u0cb5\u0cc3\u0ca4\u0ccd\u0ca4\u0cbe\u0c95\u0cbe\u0cb0\u0ca6 \u0c9a\u0cc1\u0c95\u0ccd\u0c95\u0cc6\u0c97\u0cb3\u0cc1 \u0c89\u0c82\u0c9f\u0cbe\u0c97\u0cbf \u0c8e\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0cb9\u0cb3\u0ca6\u0cbf\u0caf\u0cbe\u0c97\u0cbf \u0c89\u0ca6\u0cc1\u0cb0\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0cac\u0cc7\u0cb5\u0cbf\u0ca8 \u0c8e\u0ca3\u0ccd\u0ca3\u0cc6 \u0c85\u0ca5\u0cb5\u0cbe \u0c9f\u0cc6\u0cac\u0cc1\u0c95\u0cca\u0ca8\u0c9c\u0ccb\u0cb2\u0ccd \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf. \u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0cae\u0cc7\u0cb2\u0cc6 \u0ca8\u0cc0\u0cb0\u0cc1 \u0cac\u0cc0\u0cb3\u0ca6\u0c82\u0ca4\u0cc6 \u0cac\u0cc1\u0ca1\u0c95\u0ccd\u0c95\u0cc6 \u0ca8\u0cc0\u0cb0\u0cc1 \u0cb9\u0cbe\u0c95\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0917\u0941\u0932\u093e\u092c \u0915\u093e \u0915\u093e\u0932\u093e \u0927\u092c\u094d\u092c\u093e (Black Spot)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u092a\u0930 \u0915\u093e\u0932\u0947 \u0917\u094b\u0932 \u0927\u092c\u094d\u092c\u0947 \u092c\u0928\u0924\u0947 \u0939\u0948\u0902 \u0914\u0930 \u092a\u0924\u094d\u0924\u093f\u092f\u093e\u0902 \u092a\u0940\u0932\u0940 \u0939\u094b\u0915\u0930 \u091d\u0921\u093c\u0928\u0947 \u0932\u0917\u0924\u0940 \u0939\u0948\u0902\u0964",
+        "cure": "\u0928\u0940\u092e \u0924\u0947\u0932 \u092f\u093e \u091f\u0947\u092c\u0941\u0915\u094b\u0928\u093e\u091c\u094b\u0932 \u0915\u093e \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964 \u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u0915\u094b \u0917\u0940\u0932\u093e \u0928 \u0915\u0930\u0947\u0902, \u091c\u0921\u093c\u094b\u0902 \u092e\u0947\u0902 \u092a\u093e\u0928\u0940 \u0926\u0947\u0902\u0964"
+      }
+    },
+    "Rose___Downy_mildew": {
+      "plant": "Rose",
+      "plantSpecies": "Rosa spp.",
+      "type": "flower",
+      "disease": "Rose Downy Mildew",
+      "diseaseCategory": "oomycete",
+      "causalAgent": "Peronospora sparsa (Oomycete)",
+      "condition": "diseased",
+      "symptoms": "Purplish-red to dark brown angular lesions strictly bounded by leaf veins; rapid chlorosis and severe leaf drop within 48 hours; sparse purplish-gray downy mold on leaf undersides in humid air.",
+      "possibleCauses": "High relative humidity in protected structures or dense gardens; infected nursery stock; cool humid nights.",
+      "conditions": "Temperature 15\u00b0C\u201320\u00b0C (60\u00b0F\u201368\u00b0F) with relative humidity exceeding 85% for prolonged periods.",
+      "severityRisk": "Critical (Rapid Crop Defoliation)",
+      "observationInterval": "Daily scouting in early morning during cool overcast weather; check undersides of upper shoots.",
+      "whenToConsultExpert": "Immediate diagnostic consultation advised if entire nursery benches or rose beds show sudden leaf drop.",
+      "recommendations": {
+        "organic": [
+          "Apply Copper Octanoate (copper soap) bio-spray thoroughly covering leaf undersides.",
+          "Spray Bacillus subtilis QST 713 bio-fungicide at 7-day intervals as protectant."
+        ],
+        "chemical": [
+          "Apply Fosetyl-Al 80% WP @ 2.5g/L as systemic preventative.",
+          "Spray Dimethomorph 50% WP @ 1.0g/L + Mancozeb 75% WP @ 2.0g/L immediately."
+        ],
+        "cultural": [
+          "Immediately gather and burn fallen diseased leaves and purge symptomatic canes.",
+          "Reduce greenhouse relative humidity below 80% with nocturnal exhaust venting.",
+          "Ensure minimum 75cm spacing between shrubs to promote rapid air movement."
+        ],
+        "prevention": [
+          "Quarantine newly purchased rose plants for 21 days before introducing to garden.",
+          "Never use overhead irrigation late in the afternoon or evening."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Rose Downy Mildew Pathology and Control",
+          "organization": "University of California Statewide IPM Program",
+          "url": "https://ipm.ucanr.edu/PMG/GARDEN/PLANTS/DISEASES/rosedownymildew.html"
+        },
+        {
+          "title": "Peronospora sparsa in Ornamental Roses",
+          "organization": "Penn State Extension Plant Disease Factsheets",
+          "url": "https://extension.psu.edu/rose-diseases"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c97\u0cc1\u0cb2\u0cbe\u0cac\u0cbf \u0ca1\u0ccc\u0ca8\u0cbf \u0cb6\u0cbf\u0cb2\u0cc0\u0c82\u0ca7\u0ccd\u0cb0 (Downy Mildew)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0cae\u0cc7\u0cb2\u0cc6 \u0ca8\u0cc7\u0cb0\u0cb3\u0cc6-\u0c95\u0c82\u0ca6\u0cc1 \u0cac\u0ca3\u0ccd\u0ca3\u0ca6 \u0cb0\u0cc7\u0c96\u0cbe\u0ca4\u0ccd\u0cae\u0c95 \u0c95\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0c89\u0c82\u0c9f\u0cbe\u0c97\u0cbf \u0c8e\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0cb5\u0cc7\u0c97\u0cb5\u0cbe\u0c97\u0cbf \u0c89\u0ca6\u0cc1\u0cb0\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0ca4\u0cbe\u0cae\u0ccd\u0cb0\u0ca6 \u0cb6\u0cbf\u0cb2\u0cc0\u0c82\u0ca7\u0ccd\u0cb0\u0ca8\u0cbe\u0cb6\u0c95 \u0c85\u0ca5\u0cb5\u0cbe \u0cae\u0ccd\u0caf\u0cbe\u0c82\u0c95\u0ccb\u0c9c\u0cc6\u0cac\u0ccd \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf. \u0c8e\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0c92\u0ca3\u0c97\u0cbf\u0cb0\u0cb2\u0cc1 \u0ca4\u0cc7\u0cb5\u0cbe\u0c82\u0cb6 \u0c95\u0ca1\u0cbf\u0cae\u0cc6 \u0cae\u0cbe\u0ca1\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0917\u0941\u0932\u093e\u092c \u0915\u093e \u0921\u093e\u0909\u0928\u0940 \u092e\u093f\u0932\u094d\u0921\u094d\u092f\u0942 (Downy Mildew)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u092a\u0930 \u0928\u0938\u094b\u0902 \u0915\u0947 \u092c\u0940\u091a \u092c\u0948\u0902\u0917\u0928\u0940-\u092d\u0942\u0930\u0947 \u0915\u094b\u0923\u0940\u092f \u0927\u092c\u094d\u092c\u0947 \u092c\u0928\u0924\u0947 \u0939\u0948\u0902 \u0914\u0930 \u092a\u0924\u094d\u0924\u093f\u092f\u093e\u0902 \u0924\u0947\u091c\u0940 \u0938\u0947 \u0917\u093f\u0930\u0924\u0940 \u0939\u0948\u0902\u0964",
+        "cure": "\u0915\u0949\u092a\u0930 \u092b\u092b\u0942\u0902\u0926\u0928\u093e\u0936\u0940 \u092f\u093e \u0921\u093e\u0907\u092e\u0947\u0925\u094b\u092e\u0949\u0930\u094d\u092b \u0915\u093e \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964 \u0936\u093e\u092e \u0915\u094b \u092a\u093e\u0928\u0940 \u0926\u0947\u0928\u0947 \u0938\u0947 \u092c\u091a\u0947\u0902\u0964"
+      }
+    },
+    "Rose___healthy": {
+      "plant": "Rose",
+      "plantSpecies": "Rosa spp.",
+      "type": "flower",
+      "disease": "Healthy Rose Bush",
+      "diseaseCategory": "healthy",
+      "causalAgent": "None",
+      "condition": "healthy",
+      "symptoms": "Glossy emerald foliage, firm robust canes, well-pigmented petals, zero fungal mycelium, leaf spotting, or insect distortion.",
+      "possibleCauses": "Adequate sunlight, regular deadheading, well-draining organic soil, clean drip watering.",
+      "conditions": "6+ hours direct sunlight daily, loamy soil with pH 6.0\u20136.5, good air circulation.",
+      "severityRisk": "None",
+      "observationInterval": "Inspect weekly for early aphid colonies on flower buds and tender shoots.",
+      "whenToConsultExpert": "No treatment required.",
+      "recommendations": {
+        "organic": [
+          "Top-dress with well-aerated vermicompost and bone meal monthly during bloom."
+        ],
+        "chemical": [
+          "No intervention required."
+        ],
+        "cultural": [
+          "Regularly deadhead spent blooms at a 45\u00b0 angle above a five-leaflet leaf set."
+        ],
+        "prevention": [
+          "Maintain a 5cm layer of bark mulch keeping 7cm clear around the root crown."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Rose Care and Cultural Recommendations",
+          "organization": "Royal Horticultural Society (RHS Gardening)",
+          "url": "https://www.rhs.org.uk/plants/roses/growing-guide"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c86\u0cb0\u0ccb\u0c97\u0ccd\u0caf\u0c95\u0cb0 \u0c97\u0cc1\u0cb2\u0cbe\u0cac\u0cbf \u0cb8\u0cb8\u0ccd\u0caf (Healthy)",
+        "summary": "\u0c97\u0cc1\u0cb2\u0cbe\u0cac\u0cbf \u0c97\u0cbf\u0ca1\u0cb5\u0cc1 \u0cb8\u0c82\u0caa\u0cc2\u0cb0\u0ccd\u0ca3 \u0c86\u0cb0\u0ccb\u0c97\u0ccd\u0caf\u0c95\u0cb0\u0cb5\u0cbe\u0c97\u0cbf\u0ca6\u0ccd\u0ca6\u0cc1 \u0cb9\u0cc2 \u0cac\u0cbf\u0ca1\u0cb2\u0cc1 \u0cb8\u0cbf\u0ca6\u0ccd\u0ca7\u0cb5\u0cbe\u0c97\u0cbf\u0ca6\u0cc6.",
+        "cure": "\u0cb8\u0cbe\u0cae\u0cbe\u0ca8\u0ccd\u0caf \u0cb8\u0cbe\u0cb5\u0caf\u0cb5 \u0c97\u0cca\u0cac\u0ccd\u0cac\u0cb0 \u0ca8\u0cc0\u0ca1\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0938\u094d\u0935\u0938\u094d\u0925 \u0917\u0941\u0932\u093e\u092c (Healthy)",
+        "summary": "\u092a\u094c\u0927\u093e \u091a\u092e\u0915\u0926\u093e\u0930 \u0939\u0930\u0940 \u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u0915\u0947 \u0938\u093e\u0925 \u092a\u0942\u0930\u0940 \u0924\u0930\u0939 \u0938\u094d\u0935\u0938\u094d\u0925 \u0939\u0948\u0964",
+        "cure": "\u0928\u093f\u092f\u092e\u093f\u0924 \u0930\u0942\u092a \u0938\u0947 \u0938\u0942\u0916\u0947 \u092b\u0942\u0932 \u0915\u093e\u091f\u0924\u0947 \u0930\u0939\u0947\u0902 \u0914\u0930 \u091c\u0948\u0935\u093f\u0915 \u0916\u093e\u0926 \u0926\u0947\u0902\u0964"
+      }
+    },
+    "Rose___Insect_infested": {
+      "plant": "Rose",
+      "plantSpecies": "Rosa spp.",
+      "type": "flower",
+      "disease": "Rose Insect Infestation",
+      "diseaseCategory": "pest",
+      "causalAgent": "Arthropod Pests (Aphids, Thrips, Spider Mites, Rose Sawfly Larvae)",
+      "condition": "diseased",
+      "symptoms": "Foliar stippling and bronzing from spider mites; curled young leaf terminals; windowpane skeletonization from sawfly larvae; sticky honeydew with sooty mold; deformed flower buds.",
+      "possibleCauses": "Pest population blooms in dry warm weather; lack of natural insect predators; excessive nitrogen feeding.",
+      "conditions": "Warm dry conditions (25\u00b0C\u201332\u00b0C) favoring rapid spider mite and thrips life cycles.",
+      "severityRisk": "Moderate to High",
+      "observationInterval": "Scout twice weekly; inspect tender new shoot tips and the undersides of mid-canopy leaves.",
+      "whenToConsultExpert": "Consult extension entomologist if persistent thrips damage ruins blooms or systemic insecticides fail.",
+      "recommendations": {
+        "organic": [
+          "Spray cold-pressed pure neem oil (3000 ppm) @ 5ml/L with potassium-based insecticidal soap.",
+          "Introduce beneficial biological predators: Green lacewings (Chrysoperla carnea) or Ladybird beetles."
+        ],
+        "chemical": [
+          "Spray Imidacloprid 17.8% SL @ 0.5ml/L for systemic sap-sucking pest suppression.",
+          "Apply Spinosad 45% SC @ 0.4ml/L for thrips and sawfly leaf-skeletonizing larvae."
+        ],
+        "cultural": [
+          "Use high-pressure water jets early in the morning to physically dislodge aphid colonies.",
+          "Hang yellow sticky traps for aphids/whiteflies and blue traps for thrips around bushes."
+        ],
+        "prevention": [
+          "Avoid high-nitrogen fertilizers that generate excess succulent growth attractant to aphids.",
+          "Prune and safely destroy distorted terminal shoot tips during early infestation."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Rose Insects and Pests Management",
+          "organization": "University of California Statewide IPM Program",
+          "url": "https://ipm.ucanr.edu/PMG/GARDEN/PLANTS/DISEASES/rosepests.html"
+        },
+        {
+          "title": "Controlling Pests on Garden Roses",
+          "organization": "Royal Horticultural Society (RHS Advice)",
+          "url": "https://www.rhs.org.uk/biodiversity/rose-aphid"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c97\u0cc1\u0cb2\u0cbe\u0cac\u0cbf \u0c95\u0cc0\u0c9f \u0cac\u0cbe\u0ca7\u0cc6 (Insect Infested)",
+        "summary": "\u0cb9\u0cc7\u0ca8\u0cc1\u0c97\u0cb3\u0cc1 \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0ca8\u0cc1\u0cb8\u0cbf \u0c95\u0cc0\u0c9f\u0c97\u0cb3\u0cc1 \u0c8e\u0cb2\u0cc6\u0caf \u0cb0\u0cb8\u0cb5\u0ca8\u0ccd\u0ca8\u0cc1 \u0cb9\u0cc0\u0cb0\u0cbf \u0c8e\u0cb2\u0cc6\u0c97\u0cb3\u0ca8\u0ccd\u0ca8\u0cc1 \u0cb8\u0cc1\u0cb0\u0cc1\u0c9f\u0cbe\u0c97\u0cbf\u0cb8\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0cac\u0cc7\u0cb5\u0cbf\u0ca8 \u0c8e\u0ca3\u0ccd\u0ca3\u0cc6 \u0c85\u0ca5\u0cb5\u0cbe \u0c87\u0cae\u0cbf\u0ca1\u0cbe\u0c95\u0ccd\u0cb2\u0ccb\u0caa\u0ccd\u0cb0\u0cbf\u0ca1\u0ccd \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf. \u0cb9\u0cb3\u0ca6\u0cbf \u0c9c\u0cbf\u0c97\u0cc1\u0c9f\u0cc1 \u0cac\u0cb2\u0cc6\u0c97\u0cb3\u0ca8\u0ccd\u0ca8\u0cc1 \u0c85\u0cb3\u0cb5\u0ca1\u0cbf\u0cb8\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0917\u0941\u0932\u093e\u092c \u0915\u093e \u0915\u0940\u091f \u092a\u094d\u0930\u0915\u094b\u092a (Insect Infested)",
+        "summary": "\u092e\u093e\u0939\u0942, \u0925\u094d\u0930\u093f\u092a\u094d\u0938 \u0914\u0930 \u0915\u0940\u091f \u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u0915\u093e \u0930\u0938 \u091a\u0942\u0938\u0915\u0930 \u0909\u0928\u094d\u0939\u0947\u0902 \u0935\u093f\u0915\u0943\u0924 \u0914\u0930 \u092a\u0940\u0932\u093e \u0915\u0930 \u0926\u0947\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "cure": "\u0928\u0940\u092e \u0915\u093e \u0924\u0947\u0932 (5ml/\u0932\u0940\u091f\u0930) \u092f\u093e \u0907\u092e\u093f\u0921\u093e\u0915\u094d\u0932\u094b\u092a\u094d\u0930\u093f\u0921 \u0915\u093e \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964 \u092a\u0940\u0932\u0947 \u091a\u093f\u092a\u091a\u093f\u092a\u0947 \u091f\u094d\u0930\u0948\u092a \u0932\u0917\u093e\u090f\u0902\u0964"
+      }
+    },
+    "Plant___Nitrogen_deficiency": {
+      "plant": "Crop / Flower",
+      "plantSpecies": "Multiple Crop & Flower Species",
+      "type": "nutrient",
+      "disease": "Nitrogen (N) Deficiency",
+      "diseaseCategory": "nutrient_deficiency",
+      "causalAgent": "Soil Available Nitrogen Depletion (Mobile Macronutrient Deficiency)",
+      "condition": "nutrient_deficiency",
+      "symptoms": "Uniform pale green to golden-yellow chlorosis beginning on oldest basal leaves as nitrogen mobilizes to new shoots; stunted vegetative growth, thin spindly stems, and reduced leaf size.",
+      "possibleCauses": "Low organic matter; heavy rainfall leaching nitrate ions; waterlogged soil causing denitrification; sandy soil texture.",
+      "conditions": "High leaching rain events; cool soil temperatures inhibiting bacterial mineralization; low cation exchange capacity (CEC).",
+      "severityRisk": "Moderate to High (Vegetative Stunting)",
+      "observationInterval": "Scout weekly; inspect lower canopy leaves for premature yellowing and assess overall plant vigor.",
+      "whenToConsultExpert": "Submit composite soil and leaf petiole samples to an accredited agricultural testing laboratory for precise N-P-K assay.",
+      "recommendations": {
+        "organic": [
+          "Apply well-cured compost, blood meal (12-0-0), or hydrolyzed fish emulsion (5ml/L).",
+          "Apply aerated vermicompost tea or fermented cow manure slurry (Jeevamrutha) with irrigation."
+        ],
+        "chemical": [
+          "Apply 1%\u20132% foliar Urea spray (10g\u201320g per liter of water) for rapid trans-cuticular absorption.",
+          "Side-dress with Calcium Ammonium Nitrate (CAN) or Ammonium Sulfate according to soil test recommendations."
+        ],
+        "cultural": [
+          "Incorporate leguminous cover crops (sunn hemp, clover, velvet bean) into soil prior to main crop planting.",
+          "Improve field drainage to eliminate anaerobic standing water and denitrification."
+        ],
+        "prevention": [
+          "Perform annual pre-planting soil nitrate testing to calibrate basal fertilizer applications."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Nutrient Deficiencies and Toxicities in Agricultural Crops",
+          "organization": "Penn State Extension Agronomy Guide",
+          "url": "https://extension.psu.edu/plant-nutrient-deficiencies"
+        },
+        {
+          "title": "Diagnosing Plant Nitrogen Deficiency",
+          "organization": "University of California Division of Agriculture and Natural Resources",
+          "url": "https://anrcatalog.ucanr.edu/"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0cb8\u0cbe\u0cb0\u0c9c\u0ca8\u0c95 \u0c95\u0cca\u0cb0\u0ca4\u0cc6 (Nitrogen Deficiency)",
+        "summary": "\u0cb9\u0cb3\u0cc6\u0caf \u0c8e\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0cb8\u0c82\u0caa\u0cc2\u0cb0\u0ccd\u0ca3\u0cb5\u0cbe\u0c97\u0cbf \u0cb9\u0cb3\u0ca6\u0cbf \u0cac\u0ca3\u0ccd\u0ca3\u0c95\u0ccd\u0c95\u0cc6 \u0ca4\u0cbf\u0cb0\u0cc1\u0c97\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6 \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0c97\u0cbf\u0ca1\u0ca6 \u0cac\u0cc6\u0cb3\u0cb5\u0ca3\u0cbf\u0c97\u0cc6 \u0c95\u0cc1\u0c82\u0ca0\u0cbf\u0ca4\u0cb5\u0cbe\u0c97\u0cc1\u0ca4\u0ccd\u0ca4\u0ca6\u0cc6.",
+        "cure": "\u0caf\u0cc2\u0cb0\u0cbf\u0caf\u0cbe \u0ca6\u0ccd\u0cb0\u0cbe\u0cb5\u0ca3 (10 \u0c97\u0ccd\u0cb0\u0cbe\u0c82/\u0cb2\u0cc0\u0c9f\u0cb0\u0ccd) \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf \u0c85\u0ca5\u0cb5\u0cbe \u0c9c\u0cc0\u0cb5\u0cbe\u0cae\u0cc3\u0ca4 \u0ca8\u0cc0\u0ca1\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0928\u093e\u0907\u091f\u094d\u0930\u094b\u091c\u0928 \u0915\u0940 \u0915\u092e\u0940 (Nitrogen Deficiency)",
+        "summary": "\u0928\u093f\u091a\u0932\u0940 \u092a\u0941\u0930\u093e\u0928\u0940 \u092a\u0924\u094d\u0924\u093f\u092f\u093e\u0902 \u092a\u0942\u0930\u0940 \u0924\u0930\u0939 \u092a\u0940\u0932\u0940 \u092a\u0921\u093c \u091c\u093e\u0924\u0940 \u0939\u0948\u0902 \u0914\u0930 \u092a\u094c\u0927\u0947 \u0915\u093e \u0935\u093f\u0915\u093e\u0938 \u0930\u0941\u0915 \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "cure": "1-2% \u092f\u0942\u0930\u093f\u092f\u093e \u0915\u093e \u092a\u0930\u094d\u0923\u0940\u092f \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902 \u092f\u093e \u0905\u091a\u094d\u091b\u0940 \u0938\u0921\u093c\u0940 \u0917\u094b\u092c\u0930 \u0915\u0940 \u0916\u093e\u0926 \u0921\u093e\u0932\u0947\u0902\u0964"
+      }
+    },
+    "Plant___Phosphorus_deficiency": {
+      "plant": "Crop / Flower",
+      "plantSpecies": "Multiple Crop & Flower Species",
+      "type": "nutrient",
+      "disease": "Phosphorus (P) Deficiency",
+      "diseaseCategory": "nutrient_deficiency",
+      "causalAgent": "Available Orthophosphate Deficiency (Mobile Macronutrient Deficiency)",
+      "condition": "nutrient_deficiency",
+      "symptoms": "Abnormal dark bluish-green leaves with pronounced dull reddish-purple pigmentation (anthocyanin accumulation) along leaf veins, undersides, and stems; severely delayed flowering and stunted root systems.",
+      "possibleCauses": "Strong phosphorus fixation in acidic soils (pH < 5.5) by aluminum/iron or alkaline soils (pH > 7.5) by calcium; cold wet soil restricting root uptake.",
+      "conditions": "Cool spring soil temperatures (<15\u00b0C); highly acidic or calcareous soil conditions.",
+      "severityRisk": "Moderate",
+      "observationInterval": "Inspect young seedlings and transplants every 7 days during early vegetative growth.",
+      "whenToConsultExpert": "Perform soil Mehlich-3 or Bray-1 phosphorus extraction test before broadcast application.",
+      "recommendations": {
+        "organic": [
+          "Apply steamed bone meal (3-15-0) or colloidal soft rock phosphate into the planting trench.",
+          "Inoculate root zone with vesicular-arbuscular mycorrhizal (VAM) fungi to extend root phosphorus scavenging."
+        ],
+        "chemical": [
+          "Foliar spray Monoammonium Phosphate (12-61-0) @ 5g/L or 1% Diammonium Phosphate (DAP) solution.",
+          "Band granular Single Super Phosphate (SSP 16% P2O5) or Triple Super Phosphate (TSP 46% P2O5) at planting."
+        ],
+        "cultural": [
+          "Adjust soil pH to optimal 6.2\u20136.8 range using agricultural limestone (if acidic) to maximize orthophosphate availability.",
+          "Avoid compacting soil; promote healthy mycorrhizal root development."
+        ],
+        "prevention": [
+          "Incorporate organic matter to block phosphorus sorption sites on clay mineral surfaces."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Phosphorus in Plant Nutrition",
+          "organization": "University of Minnesota Extension",
+          "url": "https://extension.umn.edu/phosphorus-and-potassium/phosphorus-crop-production"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0cb0\u0c82\u0c9c\u0c95\u0ca6 \u0c95\u0cca\u0cb0\u0ca4\u0cc6 (Phosphorus Deficiency)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0cb9\u0cbf\u0c82\u0cad\u0cbe\u0c97 \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0c95\u0cbe\u0c82\u0ca1\u0ca6 \u0cae\u0cc7\u0cb2\u0cc6 \u0ca8\u0cc7\u0cb0\u0cb3\u0cc6 \u0c85\u0ca5\u0cb5\u0cbe \u0c95\u0cc6\u0c82\u0caa\u0cc1 \u0cac\u0ca3\u0ccd\u0ca3\u0ca6 \u0c95\u0cb2\u0cc6\u0c97\u0cb3\u0cc1 \u0c95\u0cbe\u0ca3\u0cbf\u0cb8\u0cbf\u0c95\u0cca\u0cb3\u0ccd\u0cb3\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0ca1\u0cbf\u0c8e\u0caa\u0cbf (DAP) \u0c85\u0ca5\u0cb5\u0cbe \u0cae\u0cc2\u0cb3\u0cc6 \u0caa\u0cc1\u0ca1\u0cbf (Bone meal) \u0c97\u0cca\u0cac\u0ccd\u0cac\u0cb0 \u0ca8\u0cc0\u0ca1\u0cbf."
+      },
+      "hi": {
+        "disease": "\u092b\u0949\u0938\u094d\u092b\u094b\u0930\u0938 \u0915\u0940 \u0915\u092e\u0940 (Phosphorus Deficiency)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u0914\u0930 \u0924\u0928\u094b\u0902 \u092a\u0930 \u0917\u0939\u0930\u093e \u092c\u0948\u0902\u0917\u0928\u0940 \u092f\u093e \u0932\u093e\u0932 \u0930\u0902\u0917 \u0909\u092d\u0930 \u0906\u0924\u093e \u0939\u0948 \u0924\u0925\u093e \u091c\u0921\u093c\u0947\u0902 \u0915\u092e\u091c\u094b\u0930 \u0930\u0939\u0924\u0940 \u0939\u0948\u0902\u0964",
+        "cure": "\u0921\u0940.\u090f.\u092a\u0940. \u092f\u093e \u0938\u093f\u0902\u0917\u0932 \u0938\u0941\u092a\u0930 \u092b\u0949\u0938\u094d\u092b\u0947\u091f (SSP) \u0915\u093e \u0938\u0902\u0924\u0941\u0932\u093f\u0924 \u0909\u092a\u092f\u094b\u0917 \u0915\u0930\u0947\u0902\u0964"
+      }
+    },
+    "Plant___Potassium_deficiency": {
+      "plant": "Crop / Flower",
+      "plantSpecies": "Multiple Crop & Flower Species",
+      "type": "nutrient",
+      "disease": "Potassium (K) Deficiency",
+      "diseaseCategory": "nutrient_deficiency",
+      "causalAgent": "Potassium Depletion or Excess Calcium/Magnesium Antagonism",
+      "condition": "nutrient_deficiency",
+      "symptoms": "Marginal chlorosis quickly progressing to scorched, necrotic brown leaf margins ('tip burn' or 'leaf firing') on older mature leaves; curling of leaf tips; weak lodging-prone stems; poor drought tolerance.",
+      "possibleCauses": "Sandy soil leaching; imbalance from heavy calcitic lime or magnesium applications; high crop removal rates.",
+      "conditions": "Drought conditions exacerbating potassium diffusion through soil pore water.",
+      "severityRisk": "Moderate to High",
+      "observationInterval": "Inspect older foliage weekly during fruit set and bulking.",
+      "whenToConsultExpert": "Consult extension agronomist if leaf scorch affects upper canopy or fruit sizing stalls.",
+      "recommendations": {
+        "organic": [
+          "Apply wood ash (cautiously, avoid raising pH excessively), kelp meal, or greensand.",
+          "Apply Potassium Sulfate (Sulfate of Potash OMRI listed) @ 1.5kg per 100 sq meters."
+        ],
+        "chemical": [
+          "Spray foliar Potassium Nitrate (13-0-45) @ 5g/L or Potassium Sulfate @ 5g/L.",
+          "Soil apply Muriate of Potash (MOP 0-0-60) or Sulfate of Potash (SOP 0-0-50)."
+        ],
+        "cultural": [
+          "Maintain uniform soil moisture to facilitate potassium ion movement via mass flow.",
+          "Mulch beds to conserve root-zone moisture and reduce thermal stress."
+        ],
+        "prevention": [
+          "Conduct annual soil potassium balance testing; replace harvested potassium."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Potassium for Crop Production",
+          "organization": "University of Minnesota Extension",
+          "url": "https://extension.umn.edu/phosphorus-and-potassium/potassium-crop-production"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0caa\u0cca\u0c9f\u0ccd\u0caf\u0cbe\u0cb6\u0ccd \u0c95\u0cca\u0cb0\u0ca4\u0cc6 (Potassium Deficiency)",
+        "summary": "\u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0c85\u0c82\u0c9a\u0cc1\u0c97\u0cb3\u0cc1 \u0c92\u0ca3\u0c97\u0cbf \u0cb8\u0cc1\u0c9f\u0ccd\u0c9f\u0c82\u0ca4\u0cc6 \u0c95\u0c82\u0ca6\u0cc1 \u0cac\u0ca3\u0ccd\u0ca3\u0c95\u0ccd\u0c95\u0cc6 \u0ca4\u0cbf\u0cb0\u0cc1\u0c97\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0caa\u0cca\u0c9f\u0ccd\u0caf\u0cbe\u0cb6\u0cbf\u0caf\u0c82 \u0cb8\u0cb2\u0ccd\u0cab\u0cc7\u0c9f\u0ccd (SOP) \u0c85\u0ca5\u0cb5\u0cbe \u0cac\u0cc2\u0ca6\u0cbf \u0c97\u0cca\u0cac\u0ccd\u0cac\u0cb0 \u0cb9\u0cbe\u0c95\u0cbf."
+      },
+      "hi": {
+        "disease": "\u092a\u094b\u091f\u0947\u0936\u093f\u092f\u092e \u0915\u0940 \u0915\u092e\u0940 (Potassium Deficiency)",
+        "summary": "\u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u0915\u0947 \u0915\u093f\u0928\u093e\u0930\u0947 \u091d\u0941\u0932\u0938\u0915\u0930 \u092d\u0942\u0930\u0947 \u0914\u0930 \u0938\u0942\u0916\u0947 \u0939\u094b \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "cure": "\u092e\u094d\u092f\u0942\u0930\u093f\u090f\u091f \u0911\u092b \u092a\u094b\u091f\u093e\u0936 (MOP) \u092f\u093e \u092a\u094b\u091f\u0947\u0936\u093f\u092f\u092e \u0938\u0932\u094d\u092b\u0947\u091f \u0915\u093e \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964"
+      }
+    },
+    "Plant___Magnesium_deficiency": {
+      "plant": "Crop / Flower",
+      "plantSpecies": "Multiple Crop & Flower Species",
+      "type": "nutrient",
+      "disease": "Magnesium (Mg) Deficiency",
+      "diseaseCategory": "nutrient_deficiency",
+      "causalAgent": "Magnesium Depletion or High Potassium-to-Magnesium Ratio",
+      "condition": "nutrient_deficiency",
+      "symptoms": "Striking interveinal chlorosis on older mature leaves where veins remain distinctly green while interveinal areas turn pale yellow to whitish-bronze; leaf margins may curl inward; premature leaf abscission.",
+      "possibleCauses": "Sandy acidic soils with low CEC; excess potassium or ammonium fertilization antagonizing magnesium uptake.",
+      "conditions": "Acidic soils (pH < 5.5) or over-application of potash fertilizers.",
+      "severityRisk": "Moderate",
+      "observationInterval": "Inspect lower canopy foliage every 7\u201310 days during peak fruit/flower development.",
+      "whenToConsultExpert": "Perform leaf tissue analysis if symptoms persist after Epsom salt application.",
+      "recommendations": {
+        "organic": [
+          "Apply agricultural Dolomitic limestone (CaCO3 + MgCO3) to acidic soils (raising pH and supplying Mg).",
+          "Spray pharmaceutical grade Epsom salt (Magnesium Sulfate heptahydrate) @ 10g\u201315g per liter."
+        ],
+        "chemical": [
+          "Apply Magnesium Sulfate (MgSO4) 1%\u20132% foliar spray for fast therapeutic greening.",
+          "Soil apply Kieserite (MgSO4\u00b7H2O) @ 25kg/hectare."
+        ],
+        "cultural": [
+          "Balance K:Mg fertilizer ratio (ideal soil exchangeable ratio approximately 3:1 to 5:1).",
+          "Avoid excessive calcium and potassium over-fertilization."
+        ],
+        "prevention": [
+          "Incorporate dolomitic limestone during soil bed preparation when pH is below 6.0."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Secondary Plant Nutrients: Calcium, Magnesium, and Sulfur",
+          "organization": "University of Florida IFAS Extension EDIS",
+          "url": "https://edis.ifas.ufl.edu/publication/SS584"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0cae\u0cc6\u0c97\u0ccd\u0ca8\u0cc0\u0cb8\u0cbf\u0caf\u0cae\u0ccd \u0c95\u0cca\u0cb0\u0ca4\u0cc6 (Magnesium Deficiency)",
+        "summary": "\u0cb9\u0cb3\u0cc6\u0caf \u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0ca8\u0cb0\u0c97\u0cb3 \u0ca8\u0ca1\u0cc1\u0cb5\u0cbf\u0ca8 \u0cad\u0cbe\u0c97 \u0cb9\u0cb3\u0ca6\u0cbf\u0caf\u0cbe\u0c97\u0cc1\u0ca4\u0ccd\u0ca4\u0ca6\u0cc6 \u0c86\u0ca6\u0cb0\u0cc6 \u0ca8\u0cb0\u0c97\u0cb3\u0cc1 \u0cb9\u0cb8\u0cbf\u0cb0\u0cbe\u0c97\u0cbf\u0cb0\u0cc1\u0ca4\u0ccd\u0ca4\u0cb5\u0cc6.",
+        "cure": "\u0c8e\u0caa\u0ccd\u0cb8\u0cae\u0ccd \u0c89\u0caa\u0ccd\u0caa\u0cc1 (Epsom salt 15 \u0c97\u0ccd\u0cb0\u0cbe\u0c82/\u0cb2\u0cc0\u0c9f\u0cb0\u0ccd) \u0ca8\u0cc0\u0cb0\u0cbf\u0ca8\u0cb2\u0ccd\u0cb2\u0cbf \u0c95\u0cb0\u0c97\u0cbf\u0cb8\u0cbf \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf."
+      },
+      "hi": {
+        "disease": "\u092e\u0948\u0917\u094d\u0928\u0940\u0936\u093f\u092f\u092e \u0915\u0940 \u0915\u092e\u0940 (Magnesium Deficiency)",
+        "summary": "\u0928\u093f\u091a\u0932\u0940 \u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u0915\u0940 \u0928\u0938\u0947\u0902 \u0939\u0930\u0940 \u0930\u0939\u0924\u0940 \u0939\u0948\u0902 \u0914\u0930 \u092c\u0940\u091a \u0915\u093e \u092d\u093e\u0917 \u092a\u0940\u0932\u093e \u092a\u0921\u093c \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "cure": "\u090f\u092a\u094d\u0938\u092e \u0938\u0949\u0932\u094d\u091f (\u092e\u0948\u0917\u094d\u0928\u0940\u0936\u093f\u092f\u092e \u0938\u0932\u094d\u092b\u0947\u091f 15 \u0917\u094d\u0930\u093e\u092e/\u0932\u0940\u091f\u0930) \u0915\u093e \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964"
+      }
+    },
+    "Plant___Iron_deficiency_chlorosis": {
+      "plant": "Crop / Flower",
+      "plantSpecies": "Multiple Crop & Flower Species",
+      "type": "nutrient",
+      "disease": "Iron Deficiency (Interveinal Chlorosis)",
+      "diseaseCategory": "nutrient_deficiency",
+      "causalAgent": "Iron (Fe) Immobilization due to Alkaline / Calcareous Soil pH (Immobile Micronutrient)",
+      "condition": "nutrient_deficiency",
+      "symptoms": "Sharp interveinal chlorosis appearing selectively on youngest emerging terminal leaves; leaf blade turns pale ivory-yellow while fine network of veins remains intensely green; severe cases cause complete leaf bleaching and apical necrosis.",
+      "possibleCauses": "High soil pH (>7.5) precipitating ionic iron into insoluble ferric hydroxides; soil waterlogging; root disease restricting micronutrient uptake.",
+      "conditions": "Alkaline or calcareous soils high in free calcium carbonate; cold, saturated spring soils.",
+      "severityRisk": "Moderate",
+      "observationInterval": "Inspect new shoot flushes and terminal buds every 5\u20137 days.",
+      "whenToConsultExpert": "Consult local extension if foliar iron sprays fail to green new shoots within 10 days.",
+      "recommendations": {
+        "organic": [
+          "Foliar spray chelated Iron (Fe-EDDHA or Fe-EDTA 12%) @ 1.0g\u20131.5g per liter.",
+          "Incorporate elemental sulfur or acidic peat moss to lower rhizosphere pH below 6.8."
+        ],
+        "chemical": [
+          "Spray Ferrous Sulfate (FeSO4) 0.5% (5g/L) combined with 0.1% citric acid adjuvant.",
+          "Soil drench Fe-EDDHA chelate (stable up to pH 9.0) around active root drip line."
+        ],
+        "cultural": [
+          "Avoid over-watering and relieve soil compaction to encourage aerobic root respiration.",
+          "Avoid excessive phosphorus application which precipitates iron within plant vascular tissue."
+        ],
+        "prevention": [
+          "Test soil pH prior to planting; maintain optimal range 6.0\u20136.8 for micronutrient bioavailability."
+        ]
+      },
+      "sources": [
+        {
+          "title": "Iron Chlorosis in Crops and Ornamentals",
+          "organization": "Utah State University Extension",
+          "url": "https://extension.usu.edu/yardandgarden/research/iron-chlorosis"
+        },
+        {
+          "title": "Preventing and Correcting Iron Chlorosis",
+          "organization": "University of Nebraska-Lincoln CropWatch",
+          "url": "https://cropwatch.unl.edu/soils/iron-chlorosis"
+        }
+      ],
+      "lastReviewed": "2026-03-20",
+      "kn": {
+        "disease": "\u0c95\u0cac\u0ccd\u0cac\u0cbf\u0ca3\u0ca6 \u0c95\u0cca\u0cb0\u0ca4\u0cc6 (Iron Deficiency Chlorosis)",
+        "summary": "\u0cb9\u0cca\u0cb8 \u0c8e\u0cb2\u0cc6\u0c97\u0cb3 \u0ca8\u0cb0\u0c97\u0cb3\u0cc1 \u0cb9\u0cb8\u0cbf\u0cb0\u0cbe\u0c97\u0cbf\u0ca6\u0ccd\u0ca6\u0cc1, \u0ca8\u0cb0\u0c97\u0cb3 \u0ca8\u0ca1\u0cc1\u0cb5\u0cbf\u0ca8 \u0cad\u0cbe\u0c97 \u0cb8\u0c82\u0caa\u0cc2\u0cb0\u0ccd\u0ca3 \u0cb9\u0cb3\u0ca6\u0cbf\u0caf\u0cbe\u0c97\u0cc1\u0ca4\u0ccd\u0ca4\u0ca6\u0cc6.",
+        "cure": "\u0c9a\u0cc6\u0cb2\u0cc7\u0c9f\u0cc6\u0ca1\u0ccd \u0c95\u0cac\u0ccd\u0cac\u0cbf\u0ca3 (Chelated Iron Fe-EDTA 1.5 \u0c97\u0ccd\u0cb0\u0cbe\u0c82/\u0cb2\u0cc0\u0c9f\u0cb0\u0ccd) \u0cb8\u0cbf\u0c82\u0caa\u0ca1\u0cbf\u0cb8\u0cbf."
+      },
+      "hi": {
+        "disease": "\u0932\u094b\u0939\u0947 (\u0906\u092f\u0930\u0928) \u0915\u0940 \u0915\u092e\u0940 (Iron Chlorosis)",
+        "summary": "\u0928\u0908 \u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u0915\u0940 \u0928\u0938\u0947\u0902 \u0939\u0930\u0940 \u0930\u0939\u0924\u0940 \u0939\u0948\u0902 \u0914\u0930 \u0909\u0928\u0915\u0947 \u092c\u0940\u091a \u0915\u093e \u0939\u093f\u0938\u094d\u0938\u093e \u092a\u0940\u0932\u093e \u092a\u0921\u093c \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "cure": "\u091a\u093f\u0932\u0947\u091f\u0947\u0921 \u0906\u092f\u0930\u0928 (Fe-EDTA 1.5 \u0917\u094d\u0930\u093e\u092e/\u0932\u0940\u091f\u0930) \u0915\u093e \u092a\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u092a\u0930 \u091b\u093f\u0921\u093c\u0915\u093e\u0935 \u0915\u0930\u0947\u0902\u0964"
+      }
+    }
+  }
+}

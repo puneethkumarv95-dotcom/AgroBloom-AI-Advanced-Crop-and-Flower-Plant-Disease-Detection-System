@@ -1,0 +1,12 @@
+True_Class,Apple___Apple_scab,Apple___Black_rot,Apple___healthy,Pepper__bell___Bacterial_spot,Pepper__bell___healthy,Potato___Early_blight,Potato___healthy,Potato___Late_blight,Tomato___Early_blight,Tomato___healthy,Tomato___Late_blight
+Apple___Apple_scab,20,9,0,1,0,0,0,0,0,0,0
+Apple___Black_rot,0,30,0,0,0,0,0,0,0,0,0
+Apple___healthy,2,2,25,0,0,0,1,0,0,0,0
+Pepper__bell___Bacterial_spot,0,2,0,25,0,3,0,0,0,0,0
+Pepper__bell___healthy,0,1,0,16,13,0,0,0,0,0,0
+Potato___Early_blight,1,1,0,0,0,28,0,0,0,0,0
+Potato___healthy,1,0,3,0,0,3,17,0,0,0,0
+Potato___Late_blight,0,2,3,3,0,12,2,3,1,0,4
+Tomato___Early_blight,0,2,1,2,0,6,0,0,10,0,9
+Tomato___healthy,2,1,2,4,0,3,1,0,10,6,1
+Tomato___Late_blight,0,1,0,6,0,1,0,0,2,0,20

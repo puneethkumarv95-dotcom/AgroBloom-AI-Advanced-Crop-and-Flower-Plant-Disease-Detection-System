@@ -1,0 +1,5 @@
+True_Class,Rose___Black_spot,Rose___Downy_mildew,Rose___healthy,Rose___Insect_infested
+Rose___Black_spot,10,0,0,0
+Rose___Downy_mildew,0,10,0,0
+Rose___healthy,0,0,10,0
+Rose___Insect_infested,10,0,0,0

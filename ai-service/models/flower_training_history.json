@@ -1,0 +1,17 @@
+{
+  "model_name": "AgroBloom_Flower_MobileNetV2",
+  "num_classes": 4,
+  "classes": [
+    "Rose___Black_spot",
+    "Rose___Downy_mildew",
+    "Rose___healthy",
+    "Rose___Insect_infested"
+  ],
+  "training_samples": 145,
+  "validation_samples": 40,
+  "training_time_seconds": 63.47,
+  "final_train_acc": 0.7793103456497192,
+  "final_val_acc": 0.7250000238418579,
+  "final_train_loss": 0.43136098980903625,
+  "final_val_loss": 1.0736011266708374
+}
