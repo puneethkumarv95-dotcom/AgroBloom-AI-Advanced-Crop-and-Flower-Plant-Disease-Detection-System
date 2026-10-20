@@ -15,7 +15,9 @@ import {
   X,
   Sun,
   Moon,
-  Sparkles
+  Sparkles,
+  Compass,
+  LayoutDashboard
 } from 'lucide-react';
 
 const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
@@ -33,46 +35,67 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <header className="sticky top-0 z-40 bg-[#F7F4EB]/90 dark:bg-[#1A3328]/90 backdrop-blur-md border-b border-[#D8B989]/35 dark:border-[#718468]/35 transition-colors">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
-          {/* Left section: Hamburger & Logo */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          {/* Left section: Hamburger & Editorial Logo */}
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <button
               onClick={toggleSidebar}
-              className="p-1.5 sm:p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-agro-700 hover:bg-agro-50 dark:hover:bg-slate-800 focus:outline-none lg:hidden"
+              className="p-1.5 sm:p-2 rounded-xl text-[#244436] dark:text-[#EEEBDD] hover:bg-[#EEEBDD] dark:hover:bg-[#244436] focus:outline-none lg:hidden transition"
               aria-label="Toggle Navigation"
             >
-              {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
 
-            <Link to="/" className="flex items-center space-x-2.5">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-agro-700 to-agro-500 flex items-center justify-center text-white shadow-md shadow-agro-500/20">
-                <Sprout className="w-6 h-6" />
+            <Link to="/" className="flex items-center space-x-3 group">
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#244436] to-[#718468] flex items-center justify-center text-[#F7F4EB] shadow-md border border-[#D8B989]/40 group-hover:scale-105 transition-transform duration-200">
+                <Sprout className="w-5 h-5" />
               </div>
               <div>
-                <span className="font-extrabold text-xl tracking-tight text-agro-900 dark:text-agro-400">
-                  Agro<span className="text-agro-600 dark:text-agro-300">Bloom</span>
-                  <span className="text-xs ml-1 px-1.5 py-0.5 rounded bg-agro-100 dark:bg-agro-900 text-agro-800 dark:text-agro-200 font-semibold uppercase">AI</span>
-                </span>
-                <span className="block text-[10px] text-slate-500 dark:text-slate-400 font-medium -mt-1 hidden sm:block">
-                  Crop & Flower Disease Intelligence
+                <div className="flex items-baseline space-x-1.5">
+                  <span className="font-serif font-bold text-xl sm:text-2xl tracking-tight text-[#244436] dark:text-[#F7F4EB]">
+                    AgroBloom <span className="font-sans font-light italic text-[#718468] dark:text-[#A5B89B]">AI</span>
+                  </span>
+                  <span className="text-[9px] uppercase tracking-widest font-mono font-bold px-1.5 py-0.5 rounded-full bg-[#D8B989]/30 text-[#244436] dark:bg-[#718468]/30 dark:text-[#EEEBDD]">
+                    Atelier
+                  </span>
+                </div>
+                <span className="block text-[10px] text-[#718468] dark:text-[#A5B89B] tracking-wider uppercase font-semibold -mt-0.5 hidden sm:block">
+                  Botanical Health &amp; Vision Studio
                 </span>
               </div>
             </Link>
           </div>
 
+          {/* Center Links (Desktop quick atelier shortcuts) */}
+          <nav className="hidden xl:flex items-center space-x-5 text-xs font-semibold text-[#252D27]/80 dark:text-[#EEEBDD]/80">
+            <Link to="/dashboard" className="hover:text-[#244436] dark:hover:text-white transition flex items-center space-x-1">
+              <LayoutDashboard className="w-3.5 h-3.5 text-[#718468]" />
+              <span>Studio Dashboard</span>
+            </Link>
+            <Link to="/crop-detection" className="hover:text-[#244436] dark:hover:text-white transition">
+              Crop Diagnostics
+            </Link>
+            <Link to="/flower-detection" className="hover:text-[#244436] dark:hover:text-white transition">
+              Floriculture AI
+            </Link>
+            <Link to="/disease-library" className="hover:text-[#244436] dark:hover:text-white transition">
+              Herbarium
+            </Link>
+          </nav>
+
           {/* Right section: Theme, Language, Voice, Notifications & User */}
-          <div className="flex items-center space-x-1 sm:space-x-3">
+          <div className="flex items-center space-x-1.5 sm:space-x-3">
             
             {/* Dark / Light Mode Toggle */}
             <button
               onClick={toggleTheme}
               title={`Switch to ${isDark ? 'Light' : 'Dark'} Mode`}
-              className="p-1.5 sm:p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition"
+              className="p-2 rounded-xl text-[#244436] dark:text-[#EEEBDD] bg-[#EEEBDD]/60 dark:bg-[#244436]/60 hover:bg-[#EEEBDD] dark:hover:bg-[#244436] border border-[#D8B989]/40 dark:border-[#718468]/40 transition"
             >
-              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-600" />}
+              {isDark ? <Sun className="w-4 h-4 text-[#D8B989]" /> : <Moon className="w-4 h-4 text-[#244436]" />}
             </button>
 
             {/* Language Switcher */}
@@ -80,34 +103,34 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
               <button
                 onClick={() => setLangDropdown(!langDropdown)}
                 aria-label={`Language: ${language}`}
-                className="flex items-center space-x-1 px-1.5 sm:px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition"
+                className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-xl text-xs font-semibold text-[#244436] dark:text-[#EEEBDD] bg-[#EEEBDD]/60 dark:bg-[#244436]/60 hover:bg-[#EEEBDD] dark:hover:bg-[#244436] border border-[#D8B989]/40 dark:border-[#718468]/40 transition"
               >
-                <Globe className="w-4 h-4 text-agro-600" />
-                <span className="hidden sm:inline uppercase">{language}</span>
+                <Globe className="w-3.5 h-3.5 text-[#718468] dark:text-[#A5B89B]" />
+                <span className="uppercase font-mono text-[11px]">{language}</span>
               </button>
 
               {langDropdown && (
-                <div className="absolute right-0 mt-2 w-44 rounded-xl bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700 py-1.5 z-50 animate-in fade-in">
+                <div className="absolute right-0 mt-2 w-48 rounded-2xl bg-[#F7F4EB] dark:bg-[#1A3328] shadow-xl border border-[#D8B989]/50 dark:border-[#718468]/50 py-2 z-50 animate-in fade-in">
                   <button
                     onClick={() => { changeLanguage('en'); setLangDropdown(false); }}
-                    className={`w-full text-left px-3.5 py-2 text-xs flex items-center justify-between ${language === 'en' ? 'bg-agro-50 dark:bg-agro-950 text-agro-700 dark:text-agro-300 font-bold' : 'text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}`}
+                    className={`w-full text-left px-4 py-2 text-xs flex items-center justify-between ${language === 'en' ? 'bg-[#EEEBDD] dark:bg-[#244436] text-[#244436] dark:text-[#F7F4EB] font-bold' : 'text-[#252D27] dark:text-[#EEEBDD] hover:bg-[#EEEBDD]/50 dark:hover:bg-[#244436]/50'}`}
                   >
                     <span>English</span>
-                    <span className="text-slate-400 text-[10px]">EN</span>
+                    <span className="text-[#718468] text-[10px] font-mono">EN</span>
                   </button>
                   <button
                     onClick={() => { changeLanguage('kn'); setLangDropdown(false); }}
-                    className={`w-full text-left px-3.5 py-2 text-xs flex items-center justify-between ${language === 'kn' ? 'bg-agro-50 dark:bg-agro-950 text-agro-700 dark:text-agro-300 font-bold' : 'text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}`}
+                    className={`w-full text-left px-4 py-2 text-xs flex items-center justify-between ${language === 'kn' ? 'bg-[#EEEBDD] dark:bg-[#244436] text-[#244436] dark:text-[#F7F4EB] font-bold' : 'text-[#252D27] dark:text-[#EEEBDD] hover:bg-[#EEEBDD]/50 dark:hover:bg-[#244436]/50'}`}
                   >
                     <span>ಕನ್ನಡ (Kannada)</span>
-                    <span className="text-slate-400 text-[10px]">KN</span>
+                    <span className="text-[#718468] text-[10px] font-mono">KN</span>
                   </button>
                   <button
                     onClick={() => { changeLanguage('hi'); setLangDropdown(false); }}
-                    className={`w-full text-left px-3.5 py-2 text-xs flex items-center justify-between ${language === 'hi' ? 'bg-agro-50 dark:bg-agro-950 text-agro-700 dark:text-agro-300 font-bold' : 'text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}`}
+                    className={`w-full text-left px-4 py-2 text-xs flex items-center justify-between ${language === 'hi' ? 'bg-[#EEEBDD] dark:bg-[#244436] text-[#244436] dark:text-[#F7F4EB] font-bold' : 'text-[#252D27] dark:text-[#EEEBDD] hover:bg-[#EEEBDD]/50 dark:hover:bg-[#244436]/50'}`}
                   >
                     <span>हिन्दी (Hindi)</span>
-                    <span className="text-slate-400 text-[10px]">HI</span>
+                    <span className="text-[#718468] text-[10px] font-mono">HI</span>
                   </button>
                 </div>
               )}
@@ -117,9 +140,9 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
             <Link
               to="/voice"
               title="Voice Assistant"
-              className="hidden sm:flex p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-agro-700 hover:bg-agro-50 dark:hover:bg-slate-800 transition"
+              className="hidden sm:flex p-2 rounded-xl text-[#244436] dark:text-[#EEEBDD] bg-[#EEEBDD]/60 dark:bg-[#244436]/60 hover:bg-[#EEEBDD] dark:hover:bg-[#244436] border border-[#D8B989]/40 dark:border-[#718468]/40 transition"
             >
-              <Mic className="w-4 h-4 text-agro-600" />
+              <Mic className="w-4 h-4 text-[#718468] dark:text-[#A5B89B]" />
             </Link>
 
             {/* Notification Center */}
@@ -130,22 +153,22 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
               <div className="relative">
                 <button
                   onClick={() => setProfileDropdown(!profileDropdown)}
-                  className="flex items-center space-x-2 p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition border border-slate-200 dark:border-slate-700"
+                  className="flex items-center space-x-2 p-1.5 rounded-xl hover:bg-[#EEEBDD] dark:hover:bg-[#244436] transition border border-[#D8B989]/40 dark:border-[#718468]/40"
                 >
-                  <div className="w-7 h-7 rounded-full bg-agro-700 text-white flex items-center justify-center font-bold text-xs">
+                  <div className="w-7 h-7 rounded-full bg-[#244436] dark:bg-[#EEEBDD] text-[#F7F4EB] dark:text-[#244436] flex items-center justify-center font-bold text-xs font-serif">
                     {user?.name?.charAt(0) || 'U'}
                   </div>
-                  <span className="text-xs font-semibold text-slate-800 dark:text-slate-200 hidden md:block max-w-[100px] truncate">
+                  <span className="text-xs font-semibold text-[#252D27] dark:text-[#EEEBDD] hidden md:block max-w-[100px] truncate">
                     {user?.name}
                   </span>
                 </button>
 
                 {profileDropdown && (
-                  <div className="absolute right-0 mt-2 w-52 rounded-xl bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700 py-1.5 z-50">
-                    <div className="px-4 py-2 border-b border-slate-100 dark:border-slate-700">
-                      <p className="text-xs font-bold text-slate-900 dark:text-white truncate">{user?.name}</p>
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate">{user?.email}</p>
-                      <span className="inline-block mt-1 px-1.5 py-0.5 rounded text-[10px] uppercase font-bold bg-agro-100 dark:bg-agro-900 text-agro-800 dark:text-agro-200">
+                  <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-[#F7F4EB] dark:bg-[#1A3328] shadow-2xl border border-[#D8B989]/50 dark:border-[#718468]/50 py-2 z-50">
+                    <div className="px-4 py-2.5 border-b border-[#D8B989]/25 dark:border-[#718468]/25">
+                      <p className="text-xs font-serif font-bold text-[#244436] dark:text-[#EEEBDD] truncate">{user?.name}</p>
+                      <p className="text-[11px] text-[#718468] dark:text-[#A5B89B] truncate">{user?.email}</p>
+                      <span className="inline-block mt-1 px-2 py-0.5 rounded-full text-[9px] uppercase font-bold tracking-wider bg-[#D8B989]/30 text-[#244436] dark:bg-[#718468]/30 dark:text-[#EEEBDD]">
                         {user?.role}
                       </span>
                     </div>
@@ -153,33 +176,33 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
                     <Link
                       to="/profile"
                       onClick={() => setProfileDropdown(false)}
-                      className="flex items-center space-x-2 px-4 py-2 text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+                      className="flex items-center space-x-2 px-4 py-2 text-xs text-[#252D27] dark:text-[#EEEBDD] hover:bg-[#EEEBDD] dark:hover:bg-[#244436] transition"
                     >
-                      <User className="w-4 h-4 text-slate-500" />
+                      <User className="w-3.5 h-3.5 text-[#718468]" />
                       <span>{t('profile')}</span>
                     </Link>
 
                     <button
                       onClick={handleLogout}
-                      className="w-full flex items-center space-x-2 px-4 py-2 text-xs text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 text-left"
+                      className="w-full flex items-center space-x-2 px-4 py-2 text-xs text-rose-700 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 text-left transition"
                     >
-                      <LogOut className="w-4 h-4 text-red-500" />
+                      <LogOut className="w-3.5 h-3.5" />
                       <span>{t('logout')}</span>
                     </button>
                   </div>
                 )}
               </div>
             ) : (
-              <div className="flex items-center space-x-1.5">
+              <div className="flex items-center space-x-2">
                 <Link
                   to="/login"
-                  className="px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-agro-700 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition"
+                  className="px-3 py-1.5 text-xs font-semibold text-[#244436] dark:text-[#EEEBDD] hover:bg-[#EEEBDD] dark:hover:bg-[#244436] rounded-xl transition"
                 >
                   {t('login')}
                 </Link>
                 <Link
                   to="/register"
-                  className="px-3.5 py-1.5 text-xs font-medium text-white bg-agro-600 hover:bg-agro-700 rounded-lg shadow-sm transition"
+                  className="px-4 py-1.5 text-xs font-semibold text-[#F7F4EB] bg-[#244436] hover:bg-[#1A3328] dark:bg-[#EEEBDD] dark:text-[#244436] dark:hover:bg-[#FFFFFF] rounded-xl shadow-xs transition"
                 >
                   {t('register')}
                 </Link>

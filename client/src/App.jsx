@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 
 // 12 Required Pages
 import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
 import CropDetection from './pages/CropDetection';
 import FlowerDetection from './pages/FlowerDetection';
 import CameraPage from './pages/CameraPage';
@@ -53,7 +54,7 @@ const AppLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors">
+    <div className="min-h-screen flex flex-col bg-[#F7F4EB] dark:bg-[#1A3328] text-[#252D27] dark:text-[#F7F4EB] transition-colors font-sans selection:bg-[#718468] selection:text-white">
       <Navbar
         toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
         isSidebarOpen={isSidebarOpen}
@@ -68,6 +69,7 @@ const AppLayout = () => {
             <Routes>
               {/* 12 Core Required Layouts */}
               <Route path="/" element={<Home />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/crop-detection" element={<CropDetection />} />
               <Route path="/flower-detection" element={<FlowerDetection />} />
               <Route path="/camera" element={<CameraPage />} />

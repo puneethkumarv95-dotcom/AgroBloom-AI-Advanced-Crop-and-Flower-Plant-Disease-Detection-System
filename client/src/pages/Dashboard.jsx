@@ -6,284 +6,498 @@ import api from '../services/api';
 import {
   ScanLine,
   Camera,
-  Eye,
-  PieChart,
-  MessageSquare,
-  Mic,
-  WifiOff,
-  History,
-  ShieldCheck,
+  Layers,
   Sparkles,
   ArrowRight,
-  AlertTriangle,
-  CheckCircle,
+  ShieldCheck,
+  Cpu,
+  BookOpen,
+  Users,
+  Stethoscope,
+  BarChart3,
+  CheckCircle2,
   Clock,
-  Layers,
+  Beaker,
+  HeartPulse,
+  Calendar,
+  Mic,
+  Sprout,
   Activity,
-  FileText
+  History,
+  AlertTriangle,
+  ChevronRight,
+  FileText,
+  Plus,
+  RefreshCw,
+  TrendingUp,
+  Leaf,
+  Flower2
 } from 'lucide-react';
 
 const Dashboard = () => {
-  const { user } = useAuth();
+  const { user, isAuthenticated } = useAuth();
   const { t } = useLanguage();
+  
   const [history, setHistory] = useState([]);
+  const [recoveryRecords, setRecoveryRecords] = useState([]);
+  const [reminders, setReminders] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchHistory = async () => {
+    const fetchDashboardData = async () => {
+      setLoading(true);
       try {
-        const res = await api.get('/detections/history');
-        if (res.data.success) {
-          setHistory(res.data.detections || []);
+        const historyRes = await api.get('/detections/history').catch(() => ({ data: { detections: [] } }));
+        if (historyRes.data?.success) {
+          setHistory(historyRes.data.detections || []);
+        }
+
+        if (isAuthenticated) {
+          const [recoveryRes, remindersRes] = await Promise.all([
+            api.get('/recovery').catch(() => ({ data: { records: [] } })),
+            api.get('/reminders').catch(() => ({ data: { reminders: [] } }))
+          ]);
+
+          if (recoveryRes.data?.success) {
+            setRecoveryRecords(recoveryRes.data.records || []);
+          }
+          if (remindersRes.data?.success) {
+            setReminders(remindersRes.data.reminders || []);
+          }
         }
       } catch (err) {
-        console.error('Failed to load history:', err);
+        console.error('Failed to load dashboard data:', err);
       } finally {
         setLoading(false);
       }
     };
-    fetchHistory();
-  }, []);
 
-  const featureCards = [
-    {
-      title: "Crop Disease Diagnosis",
-      desc: "Instant MobileNetV2 identification with confidence score and pathology verification",
-      link: "/detect",
-      icon: ScanLine,
-      color: "from-emerald-500 to-green-700",
-      tag: "Deep Learning"
-    },
-    {
-      title: "Flower Disease Diagnosis",
-      desc: "Specialized model for ornamental and commercial blooms (Rose, Sunflower, Orchid)",
-      link: "/detect?type=flower",
-      icon: Layers,
-      color: "from-pink-500 to-rose-700",
-      tag: "Floral AI"
-    },
-    {
-      title: "Real-time Live Camera",
-      desc: "Direct field camera scanner with real-time video stream capture & bounding analysis",
-      link: "/camera",
-      icon: Camera,
-      color: "from-cyan-500 to-teal-700",
-      tag: "Live Camera"
-    },
-    {
-      title: "Explainable AI (Grad-CAM)",
-      desc: "Visualize exact neural network activation heatmaps on diseased leaf regions",
-      link: "/grad-cam",
-      icon: Eye,
-      color: "from-amber-500 to-orange-700",
-      tag: "Explainable AI"
-    },
-    {
-      title: "Severity & Segmentation",
-      desc: "Computer vision segmentation estimating precise percentage of affected leaf area",
-      link: "/segmentation",
-      icon: PieChart,
-      color: "from-indigo-500 to-purple-700",
-      tag: "Segmentation"
-    },
-    {
-      title: "Grounded AI Chatbot",
-      desc: "Pathology chatbot with grounded organic & chemical plant health remedies",
-      link: "/chatbot",
-      icon: MessageSquare,
-      color: "from-blue-500 to-indigo-700",
-      tag: "Grounded NLP"
-    },
-    {
-      title: "Voice-Based Assistant",
-      desc: "Hands-free voice recognition & spoken advice in English, Kannada, and Hindi",
-      link: "/voice-assistant",
-      icon: Mic,
-      color: "from-red-500 to-rose-700",
-      tag: "Multilingual Voice"
-    },
-    {
-      title: "Offline Browser AI",
-      desc: "Zero-latency in-browser TensorFlow.js inference for remote field areas without internet",
-      link: "/offline",
-      icon: WifiOff,
-      color: "from-slate-600 to-slate-900",
-      tag: "Offline Edge"
-    }
-  ];
+    fetchDashboardData();
+  }, [isAuthenticated]);
+
+  // Derived Telemetry from genuine data
+  const totalDetections = history.length;
+  const cropDetections = history.filter(d => (d.plantType || '').toLowerCase() === 'crop' || (d.type || '').toLowerCase() === 'crop').length;
+  const flowerDetections = history.filter(d => (d.plantType || '').toLowerCase() === 'flower' || (d.type || '').toLowerCase() === 'flower').length;
+  const healthyCount = history.filter(d => (d.condition || '').toLowerCase() === 'healthy' || (d.primaryDisease || '').toLowerCase().includes('healthy')).length;
+  const diseasedCount = totalDetections - healthyCount;
+  const healthyRate = totalDetections > 0 ? Math.round((healthyCount / totalDetections) * 100) : 0;
+
+  // Disease frequency counts
+  const diseaseCounts = {};
+  history.forEach(item => {
+    const disease = item.primaryDisease || 'Unknown';
+    diseaseCounts[disease] = (diseaseCounts[disease] || 0) + 1;
+  });
+  const topDiseases = Object.entries(diseaseCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 4);
 
   return (
-    <div className="space-y-8 pb-12">
+    <div className="space-y-10 sm:space-y-12 pb-20 font-sans">
       
-      {/* Hero Banner */}
-      <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-agro-950 via-agro-900 to-agro-800 text-white shadow-xl">
-        <div className="absolute inset-0 opacity-15 leaf-pattern"></div>
-        <div className="relative z-10 p-6 sm:p-10 max-w-3xl space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-agro-500/20 border border-agro-400/30 text-agro-300 text-xs font-semibold backdrop-blur-sm">
-            <Sparkles className="w-3.5 h-3.5 text-agro-400" />
-            <span>MCA Final Year Major Project &bull; MobileNetV2 Vision AI</span>
+      {/* 5.2 WELCOME EDITORIAL HEADER */}
+      <section className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-[#1A3328] via-[#244436] to-[#2F5947] text-[#F7F4EB] shadow-2xl border border-[#D8B989]/30 p-8 sm:p-12">
+        <div className="absolute inset-0 opacity-10 pointer-events-none botanical-bg"></div>
+        
+        <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="space-y-3 max-w-2xl">
+            
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#F7F4EB]/10 border border-[#D8B989]/40 text-[#D8B989] text-xs font-semibold backdrop-blur-md">
+              <Sprout className="w-3.5 h-3.5 text-[#D8B989]" />
+              <span className="tracking-widest uppercase font-mono text-[10px]">
+                {isAuthenticated ? `${user?.role || 'Farmer'} Workspace` : 'Botanical Intelligence Workspace'}
+              </span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-[#F7F4EB] leading-tight">
+              {isAuthenticated ? (
+                <>
+                  Welcome back, <br />
+                  <span className="text-[#D8B989] italic font-normal">{user?.name || 'Fellow Agronomist'}</span>
+                </>
+              ) : (
+                <>
+                  AgroBloom AI <br />
+                  <span className="text-[#D8B989] italic font-normal">Botanical Atelier Studio</span>
+                </>
+              )}
+            </h1>
+
+            <p className="text-xs sm:text-sm text-[#EEEBDD]/85 leading-relaxed font-light">
+              Explore live neural foliar diagnostics, review your specimen telemetry, track continuous plant recovery, and coordinate clinical care plans.
+            </p>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-            AgroBloom AI <br />
-            <span className="text-agro-400 font-medium text-xl sm:text-2xl">
-              Precision Crop & Flower Pathology Diagnostic System
-            </span>
-          </h1>
-
-          <p className="text-xs sm:text-sm text-agro-100/90 leading-relaxed max-w-2xl">
-            Diagnose plant fungal, bacterial, and viral infections in seconds. Powered by 
-            convolutional neural networks, Grad-CAM neural explainability, lesion segmentation, 
-            and grounded treatment recommendations.
-          </p>
-
-          <div className="pt-2 flex flex-wrap gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Link
-              to="/detect"
-              className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-agro-500 hover:bg-agro-600 text-white font-semibold text-xs shadow-lg shadow-agro-500/30 transition transform hover:-translate-y-0.5"
+              to="/crop-detection"
+              className="inline-flex items-center space-x-2 px-5 py-3 rounded-2xl bg-[#D8B989] hover:bg-[#EFE2CE] text-[#1A3328] font-bold text-xs shadow-lg transition transform hover:-translate-y-0.5"
             >
-              <ScanLine className="w-4 h-4" />
-              <span>Diagnose Leaf Now</span>
+              <ScanLine className="w-4 h-4 text-[#1A3328]" />
+              <span>New Crop Diagnosis</span>
+            </Link>
+
+            <Link
+              to="/flower-detection"
+              className="inline-flex items-center space-x-2 px-5 py-3 rounded-2xl bg-[#F7F4EB]/15 hover:bg-[#F7F4EB]/25 text-[#F7F4EB] font-semibold text-xs backdrop-blur-md border border-[#D8B989]/40 transition"
+            >
+              <Layers className="w-4 h-4 text-[#D8B989]" />
+              <span>Floriculture AI</span>
             </Link>
 
             <Link
               to="/camera"
-              className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs backdrop-blur-md border border-white/20 transition"
+              className="inline-flex items-center space-x-2 px-4 py-3 rounded-2xl bg-[#1A3328]/60 hover:bg-[#1A3328] text-[#EEEBDD] font-semibold text-xs border border-[#A5B89B]/30 transition"
             >
-              <Camera className="w-4 h-4" />
-              <span>Real-time Camera</span>
-            </Link>
-
-            <Link
-              to="/chatbot"
-              className="inline-flex items-center space-x-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs backdrop-blur-md border border-white/20 transition"
-            >
-              <MessageSquare className="w-4 h-4 text-agro-300" />
-              <span>AI Chatbot</span>
+              <Camera className="w-4 h-4 text-[#A5B89B]" />
+              <span>Camera</span>
             </Link>
           </div>
         </div>
 
-        {/* Status bar */}
-        <div className="relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-xs px-6 py-3 flex flex-wrap items-center justify-between gap-4 text-[11px] text-agro-200">
-          <div className="flex items-center space-x-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>AI Diagnostic Engine: <strong>MobileNetV2 Active</strong></span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <ShieldCheck className="w-4 h-4 text-agro-400" />
-            <span>Grad-CAM Explainable Heatmap: <strong>Enabled</strong></span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Activity className="w-4 h-4 text-agro-400" />
-            <span>Severity Segmentation: <strong>Calibrated</strong></span>
-          </div>
-        </div>
-      </div>
-
-      {/* Core AI Modules Grid */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
+        {/* Real-time telemetry ribbon */}
+        <div className="relative z-10 mt-8 pt-4 border-t border-[#D8B989]/20 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
           <div>
-            <h2 className="text-lg font-bold text-slate-900">Diagnostic & Intelligence Modules</h2>
-            <p className="text-xs text-slate-500">Select any module to inspect, diagnose, or monitor crops and flowers</p>
+            <span className="text-[#A5B89B] text-[10px] uppercase tracking-wider block">Specimens Scanned</span>
+            <span className="text-xl font-serif font-bold text-[#F7F4EB]">{totalDetections}</span>
+          </div>
+          <div>
+            <span className="text-[#A5B89B] text-[10px] uppercase tracking-wider block">Crop Diagnoses</span>
+            <span className="text-xl font-serif font-bold text-[#D8B989]">{cropDetections}</span>
+          </div>
+          <div>
+            <span className="text-[#A5B89B] text-[10px] uppercase tracking-wider block">Flower Diagnoses</span>
+            <span className="text-xl font-serif font-bold text-[#F7F4EB]">{flowerDetections}</span>
+          </div>
+          <div>
+            <span className="text-[#A5B89B] text-[10px] uppercase tracking-wider block">Foliar Health Rate</span>
+            <span className="text-xl font-serif font-bold text-[#A5B89B]">
+              {totalDetections > 0 ? `${healthyRate}%` : 'N/A'}
+            </span>
           </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {featureCards.map((card, i) => (
-            <Link
-              key={i}
-              to={card.link}
-              className="group bg-white rounded-2xl p-5 border border-slate-200/80 hover:border-agro-500/50 hover:shadow-lg hover:shadow-agro-500/5 transition flex flex-col justify-between"
-            >
+      {/* 5.3 ORGANIC BENTO GRID */}
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
+        
+        {/* Left Bento: 8 cols */}
+        <div className="lg:col-span-8 space-y-6 sm:space-y-8">
+          
+          {/* Card: Specimen Pathology Telemetry & Visual Chart */}
+          <div className="atelier-card rounded-[2.5rem] p-6 sm:p-8 space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-tr ${card.color} flex items-center justify-center text-white shadow-md`}>
-                    <card.icon className="w-5 h-5" />
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#718468] dark:text-[#A5B89B] font-bold">
+                  Empirical Pathology Breakdown
+                </span>
+                <h2 className="text-2xl font-serif font-bold text-[#244436] dark:text-[#EEEBDD]">
+                  Diagnostic Specimen Distribution
+                </h2>
+              </div>
+              <Link to="/analytics" className="text-xs font-bold text-[#718468] dark:text-[#D8B989] hover:underline flex items-center space-x-1">
+                <span>Detailed Telemetry</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            {totalDetections === 0 ? (
+              <div className="py-12 text-center rounded-[2rem] bg-[#F7F4EB]/70 dark:bg-[#1A3328]/70 border border-dashed border-[#D8B989]/40 p-6 space-y-3">
+                <Leaf className="w-10 h-10 text-[#718468] mx-auto opacity-70" />
+                <h3 className="font-serif text-lg font-bold text-[#244436] dark:text-[#EEEBDD]">No Diagnostic Ingestions Yet</h3>
+                <p className="text-xs text-[#252D27]/70 dark:text-[#EEEBDD]/70 max-w-sm mx-auto font-light">
+                  Once you diagnose your first leaf specimen, genuine neural distribution, severity metrics, and disease frequency will render here.
+                </p>
+                <Link
+                  to="/crop-detection"
+                  className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-[#244436] text-[#F7F4EB] text-xs font-bold shadow-md hover:bg-[#1A3328] transition"
+                >
+                  <ScanLine className="w-3.5 h-3.5" />
+                  <span>Scan First Leaf</span>
+                </Link>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+                
+                {/* 5.4 DATA VISUALIZATION: SVG DONUT METER */}
+                <div className="flex items-center space-x-6 p-4 rounded-2xl bg-[#EEEBDD]/60 dark:bg-[#1A3328]/60 border border-[#D8B989]/30">
+                  <div className="relative w-28 h-28 shrink-0 flex items-center justify-center">
+                    <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                      <path
+                        className="text-[#D8B989]/30"
+                        strokeWidth="3.8"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        className="text-[#244436] dark:text-[#A5B89B]"
+                        strokeDasharray={`${healthyRate}, 100`}
+                        strokeWidth="3.8"
+                        strokeLinecap="round"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
+                    <div className="absolute text-center">
+                      <span className="font-serif text-xl font-bold text-[#244436] dark:text-[#EEEBDD] block">{healthyRate}%</span>
+                      <span className="text-[8px] uppercase tracking-wider font-mono text-[#718468] dark:text-[#A5B89B]">Healthy</span>
+                    </div>
                   </div>
-                  <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
-                    {card.tag}
-                  </span>
+
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-center space-x-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#244436] dark:bg-[#A5B89B]"></span>
+                      <span className="font-semibold text-[#252D27] dark:text-[#EEEBDD]">Healthy Leaves:</span>
+                      <span className="font-mono font-bold text-[#718468] dark:text-[#D8B989]">{healthyCount}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#D8B989]"></span>
+                      <span className="font-semibold text-[#252D27] dark:text-[#EEEBDD]">Infected Leaves:</span>
+                      <span className="font-mono font-bold text-[#718468] dark:text-[#D8B989]">{diseasedCount}</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-[11px] text-[#718468] dark:text-[#A5B89B] pt-1">
+                      <span>Total Archival Count: {totalDetections}</span>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-sm font-bold text-slate-800 group-hover:text-agro-700 transition">
-                  {card.title}
-                </h3>
-                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                  {card.desc}
+
+                {/* Top Pathologies Bar Distribution */}
+                <div className="space-y-3">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#718468] dark:text-[#A5B89B] font-bold block">
+                    Most Prevalent Observed Pathologies
+                  </span>
+                  {topDiseases.map(([disease, count], i) => {
+                    const pct = Math.round((count / totalDetections) * 100);
+                    return (
+                      <div key={i} className="space-y-1">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="font-serif font-bold text-[#244436] dark:text-[#EEEBDD] truncate max-w-[200px]">{disease}</span>
+                          <span className="font-mono text-[10px] text-[#718468] dark:text-[#A5B89B]">{count} ({pct}%)</span>
+                        </div>
+                        <div className="h-2 rounded-full bg-[#EEEBDD] dark:bg-[#1A3328] overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-gradient-to-r from-[#718468] to-[#244436] dark:from-[#A5B89B] dark:to-[#D8B989]"
+                            style={{ width: `${pct}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+              </div>
+            )}
+          </div>
+
+          {/* Card: Recent Diagnostic Ingestions */}
+          <div className="atelier-card rounded-[2.5rem] p-6 sm:p-8 space-y-5">
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#718468] dark:text-[#A5B89B] font-bold">
+                  Specimen Ingestion Archive
+                </span>
+                <h2 className="text-xl font-serif font-bold text-[#244436] dark:text-[#EEEBDD]">
+                  Recent Diagnostic Records
+                </h2>
+              </div>
+              <Link to="/history" className="text-xs font-bold text-[#718468] dark:text-[#D8B989] hover:underline flex items-center space-x-1">
+                <span>View All History</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            {loading ? (
+              <div className="py-8 text-center text-xs text-[#718468] font-mono">
+                Loading botanical archival records...
+              </div>
+            ) : history.length === 0 ? (
+              <div className="py-8 text-center rounded-2xl bg-[#EEEBDD]/40 dark:bg-[#1A3328]/40 border border-dashed border-[#D8B989]/40 p-4">
+                <p className="text-xs text-[#252D27]/70 dark:text-[#EEEBDD]/70 font-light">
+                  No records stored yet. Run an analysis in Crop or Flower Detection to populate this archive.
                 </p>
               </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {history.slice(0, 3).map((item) => (
+                  <div
+                    key={item._id}
+                    className="p-4 rounded-2xl border border-[#D8B989]/30 bg-[#F7F4EB]/70 dark:bg-[#1A3328]/70 hover:border-[#718468] transition space-y-3 flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-[9px] font-mono uppercase font-bold px-2 py-0.5 rounded-full bg-[#D8B989]/25 text-[#244436] dark:text-[#EEEBDD]">
+                          {item.plantType || item.type || 'Plant'}
+                        </span>
+                        <span className={`text-[10px] font-bold font-mono px-2 py-0.5 rounded-full ${
+                          (item.condition || '').toLowerCase() === 'healthy'
+                            ? 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300'
+                            : 'bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-300'
+                        }`}>
+                          {item.condition || 'Tested'}
+                        </span>
+                      </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-semibold text-agro-700 group-hover:translate-x-1 transition duration-200">
-                <span>Launch Tool</span>
-                <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                      <h4 className="font-serif font-bold text-sm text-[#244436] dark:text-[#EEEBDD] truncate">
+                        {item.plantName || 'Specimen'}
+                      </h4>
+                      <p className="text-xs text-[#718468] dark:text-[#A5B89B] truncate mt-0.5 font-light">
+                        {item.primaryDisease || 'Standard Condition'}
+                      </p>
+                    </div>
+
+                    <div className="pt-2 border-t border-[#D8B989]/20 flex items-center justify-between text-[11px] font-mono text-[#718468] dark:text-[#A5B89B]">
+                      <span>{(item.confidence || 0).toFixed(1)}% Conf.</span>
+                      <span>{new Date(item.createdAt).toLocaleDateString()}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Recent Detection History */}
-      <div className="bg-white rounded-2xl border border-slate-200/80 p-5 space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <History className="w-5 h-5 text-agro-700" />
-            <h3 className="text-sm font-bold text-slate-900">{t('history')}</h3>
+            )}
           </div>
-          <Link to="/history" className="text-xs font-semibold text-agro-700 hover:underline">
-            View All History &rarr;
-          </Link>
+
         </div>
 
-        {loading ? (
-          <div className="py-8 text-center text-xs text-slate-400">Loading detection records...</div>
-        ) : history.length === 0 ? (
-          <div className="py-8 text-center bg-slate-50 rounded-xl border border-dashed border-slate-200">
-            <p className="text-xs text-slate-500">{t('noHistory')}</p>
-            <Link
-              to="/detect"
-              className="mt-3 inline-flex items-center space-x-1.5 px-4 py-2 bg-agro-600 hover:bg-agro-700 text-white rounded-lg text-xs font-semibold transition"
-            >
-              <ScanLine className="w-4 h-4" />
-              <span>Scan Your First Plant</span>
-            </Link>
+        {/* Right Bento: 4 cols */}
+        <div className="lg:col-span-4 space-y-6 sm:space-y-8">
+          
+          {/* Card: Active Plant Recovery Tracking */}
+          <div className="atelier-card rounded-[2.5rem] p-6 sm:p-7 space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <Calendar className="w-4 h-4 text-[#718468]" />
+                <h3 className="font-serif font-bold text-base text-[#244436] dark:text-[#EEEBDD]">
+                  Recovery Tracking
+                </h3>
+              </div>
+              <Link to="/recovery" className="text-xs text-[#718468] hover:underline font-bold">
+                View All
+              </Link>
+            </div>
+
+            {recoveryRecords.length === 0 ? (
+              <div className="p-5 rounded-2xl bg-[#EEEBDD]/50 dark:bg-[#1A3328]/50 border border-dashed border-[#D8B989]/40 text-center space-y-2">
+                <HeartPulse className="w-6 h-6 text-[#718468] mx-auto opacity-70" />
+                <p className="text-xs text-[#252D27]/80 dark:text-[#EEEBDD]/80 font-serif font-bold">
+                  No Monitored Recovery Cases
+                </p>
+                <p className="text-[11px] text-[#252D27]/60 dark:text-[#EEEBDD]/60 leading-relaxed font-light">
+                  Track healing progression across treatments with comparative sliders and severity curves.
+                </p>
+                <Link
+                  to="/recovery"
+                  className="mt-2 inline-flex items-center space-x-1 text-xs font-bold text-[#244436] dark:text-[#D8B989] hover:underline"
+                >
+                  <Plus className="w-3.5 h-3.5" />
+                  <span>Start New Recovery Log</span>
+                </Link>
+              </div>
+            ) : (
+              <div className="space-y-2.5">
+                {recoveryRecords.slice(0, 2).map((rec) => (
+                  <div key={rec._id} className="p-3.5 rounded-xl border border-[#D8B989]/30 bg-[#F7F4EB]/70 dark:bg-[#1A3328]/70 space-y-1.5">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="font-serif font-bold text-[#244436] dark:text-[#EEEBDD]">{rec.plantName}</span>
+                      <span className="text-[10px] font-mono text-[#718468] dark:text-[#A5B89B]">{rec.status || 'In Treatment'}</span>
+                    </div>
+                    <p className="text-[11px] text-[#718468] dark:text-[#A5B89B] truncate">{rec.diseaseName}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {history.slice(0, 3).map((item) => (
-              <div
-                key={item._id}
-                className="p-3.5 rounded-xl border border-slate-200 hover:border-agro-300 transition flex items-start space-x-3 bg-slate-50/50"
+
+          {/* Card: Plant Care Reminders */}
+          <div className="atelier-card rounded-[2.5rem] p-6 sm:p-7 space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <HeartPulse className="w-4 h-4 text-[#718468]" />
+                <h3 className="font-serif font-bold text-base text-[#244436] dark:text-[#EEEBDD]">
+                  Plant Care Schedules
+                </h3>
+              </div>
+              <Link to="/plant-care" className="text-xs text-[#718468] hover:underline font-bold">
+                Plans
+              </Link>
+            </div>
+
+            {reminders.length === 0 ? (
+              <div className="p-5 rounded-2xl bg-[#EEEBDD]/50 dark:bg-[#1A3328]/50 border border-dashed border-[#D8B989]/40 text-center space-y-2">
+                <CheckCircle2 className="w-6 h-6 text-[#718468] mx-auto opacity-70" />
+                <p className="text-xs text-[#252D27]/80 dark:text-[#EEEBDD]/80 font-serif font-bold">
+                  All Scheduled Care Tasks Current
+                </p>
+                <p className="text-[11px] text-[#252D27]/60 dark:text-[#EEEBDD]/60 leading-relaxed font-light">
+                  Create personalized treatment tasks, spraying alerts, and bio-remedy checklists.
+                </p>
+                <Link
+                  to="/plant-care"
+                  className="mt-2 inline-flex items-center space-x-1 text-xs font-bold text-[#244436] dark:text-[#D8B989] hover:underline"
+                >
+                  <Plus className="w-3.5 h-3.5" />
+                  <span>Configure Care Plan</span>
+                </Link>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {reminders.slice(0, 3).map((r) => (
+                  <div key={r._id} className="p-3 rounded-xl border border-[#D8B989]/30 bg-[#F7F4EB]/70 dark:bg-[#1A3328]/70 flex items-center justify-between text-xs">
+                    <span className="font-serif font-bold text-[#244436] dark:text-[#EEEBDD] truncate">{r.title}</span>
+                    <span className="text-[10px] font-mono text-[#718468] dark:text-[#A5B89B]">{r.date || 'Scheduled'}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Card: Atelier Quick Launch Palette */}
+          <div className="atelier-card rounded-[2.5rem] p-6 sm:p-7 space-y-4">
+            <h3 className="font-serif font-bold text-base text-[#244436] dark:text-[#EEEBDD]">
+              Atelier Quick Palette
+            </h3>
+            <div className="grid grid-cols-2 gap-2.5">
+              <Link
+                to="/offline"
+                className="p-3 rounded-2xl bg-[#EEEBDD]/70 dark:bg-[#1A3328]/70 border border-[#D8B989]/30 hover:border-[#718468] transition text-center space-y-1 group"
               >
-                <img
-                  src={item.originalImageUrl || '/placeholder.png'}
-                  alt={item.plantName}
-                  className="w-14 h-14 rounded-lg object-cover bg-slate-200 shrink-0"
-                />
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-slate-800 truncate">{item.plantName}</span>
-                    <span className={`text-[10px] px-1.5 py-0.5 rounded font-semibold ${
-                      item.condition === 'healthy' ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'
-                    }`}>
-                      {item.condition}
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-slate-600 truncate mt-0.5">{item.primaryDisease}</p>
-                  <div className="flex items-center justify-between mt-2 text-[10px] text-slate-400">
-                    <span>{item.confidence.toFixed(1)}% confidence</span>
-                    <span>{new Date(item.createdAt).toLocaleDateString()}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+                <Cpu className="w-4 h-4 mx-auto text-[#718468] group-hover:scale-110 transition-transform" />
+                <span className="text-[11px] font-serif font-bold text-[#244436] dark:text-[#EEEBDD] block">Offline Studio</span>
+              </Link>
+
+              <Link
+                to="/chatbot"
+                className="p-3 rounded-2xl bg-[#EEEBDD]/70 dark:bg-[#1A3328]/70 border border-[#D8B989]/30 hover:border-[#718468] transition text-center space-y-1 group"
+              >
+                <Sparkles className="w-4 h-4 mx-auto text-[#D8B989] group-hover:scale-110 transition-transform" />
+                <span className="text-[11px] font-serif font-bold text-[#244436] dark:text-[#EEEBDD] block">AI Agronomist</span>
+              </Link>
+
+              <Link
+                to="/voice"
+                className="p-3 rounded-2xl bg-[#EEEBDD]/70 dark:bg-[#1A3328]/70 border border-[#D8B989]/30 hover:border-[#718468] transition text-center space-y-1 group"
+              >
+                <Mic className="w-4 h-4 mx-auto text-[#718468] group-hover:scale-110 transition-transform" />
+                <span className="text-[11px] font-serif font-bold text-[#244436] dark:text-[#EEEBDD] block">Voice Guide</span>
+              </Link>
+
+              <Link
+                to="/disease-library"
+                className="p-3 rounded-2xl bg-[#EEEBDD]/70 dark:bg-[#1A3328]/70 border border-[#D8B989]/30 hover:border-[#718468] transition text-center space-y-1 group"
+              >
+                <BookOpen className="w-4 h-4 mx-auto text-[#718468] group-hover:scale-110 transition-transform" />
+                <span className="text-[11px] font-serif font-bold text-[#244436] dark:text-[#EEEBDD] block">Herbarium</span>
+              </Link>
+            </div>
           </div>
-        )}
-      </div>
+
+        </div>
+
+      </section>
 
     </div>
   );
 };
 
 export default Dashboard;
-

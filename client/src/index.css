@@ -4,19 +4,85 @@
 
 @layer base {
   body {
-    @apply font-sans bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+    @apply font-sans bg-[#F7F4EB] text-[#252D27] dark:bg-[#1A3328] dark:text-[#F7F4EB] transition-colors duration-300;
+  }
+
+  h1, h2, h3, .font-serif {
+    letter-spacing: -0.02em;
   }
 }
 
+/* Botanical Atelier Design System */
+.botanical-bg {
+  background-color: #F7F4EB;
+  background-image: radial-gradient(#D8B989 0.6px, transparent 0.6px), radial-gradient(#D8B989 0.6px, #F7F4EB 0.6px);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
+}
+
+.dark .botanical-bg {
+  background-color: #1A3328;
+  background-image: radial-gradient(#718468 0.6px, transparent 0.6px), radial-gradient(#718468 0.6px, #1A3328 0.6px);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
+}
+
+.atelier-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(216, 185, 137, 0.35);
+  box-shadow: 0 16px 32px -12px rgba(36, 68, 54, 0.06), 0 2px 6px 0 rgba(36, 68, 54, 0.03);
+}
+
+.dark .atelier-card {
+  background: rgba(36, 68, 54, 0.75);
+  border: 1px solid rgba(165, 184, 155, 0.2);
+  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.4);
+}
+
+.atelier-card-cream {
+  background: #EEEBDD;
+  border: 1px solid rgba(216, 185, 137, 0.45);
+}
+
+.dark .atelier-card-cream {
+  background: #244436;
+  border: 1px solid rgba(165, 184, 155, 0.25);
+}
+
+.atelier-pill {
+  border: 1px solid rgba(113, 132, 104, 0.3);
+  background: rgba(247, 244, 235, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.dark .atelier-pill {
+  border: 1px solid rgba(165, 184, 155, 0.3);
+  background: rgba(26, 51, 40, 0.85);
+}
+
+.editorial-divider {
+  background: linear-gradient(90deg, transparent, rgba(216, 185, 137, 0.5), transparent);
+}
+
+.botanical-shadow {
+  box-shadow: 0 24px 48px -18px rgba(36, 68, 54, 0.12), 0 0 1px 1px rgba(113, 132, 104, 0.12);
+}
+
+.dark .botanical-shadow {
+  box-shadow: 0 24px 48px -18px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(165, 184, 155, 0.15);
+}
+
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(216, 185, 137, 0.3);
 }
 
 .agro-gradient {
-  background: linear-gradient(135deg, #052e16 0%, #166534 60%, #15803d 100%);
+  background: linear-gradient(135deg, #1A3328 0%, #244436 55%, #718468 100%);
 }
 
 .leaf-pattern {
